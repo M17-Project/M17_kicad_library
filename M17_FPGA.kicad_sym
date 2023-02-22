@@ -6,7 +6,7 @@
     (property "Value" "" (at 7.62 15.24 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Package_DFN_QFN:QFN-72-1EP_10x10mm_P0.5mm_EP6x6mm" (at 7.62 15.24 0)
+    (property "Footprint" "M17_QFN:QFN-72-1EP_10x10mm_P0.5mm_EP6.2x6.2mm" (at 7.62 15.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.latticesemi.com/-/media/LatticeSemi/Documents/DataSheets/CrossLink/FPGA-DS-02049-1-6-CrossLink-NX-Family.ashx?document_id=52780" (at 7.62 15.24 0)

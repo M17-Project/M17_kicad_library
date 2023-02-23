@@ -106,7 +106,7 @@
         (number "27" (effects (font (size 1.27 1.27))))
       )
       (pin input line (at 1.27 31.75 270) (length 5.08)
-        (name "RXDP" (effects (font (size 1.27 1.27))))
+        (name "TXDP" (effects (font (size 1.27 1.27))))
         (number "28" (effects (font (size 1.27 1.27))))
       )
       (pin power_in line (at -34.29 -12.7 0) (length 5.08)

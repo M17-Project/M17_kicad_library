@@ -565,6 +565,10 @@
         (name "CTL1" (effects (font (size 1.27 1.27))))
         (number "7" (effects (font (size 1.27 1.27))))
       )
+      (pin no_connect line (at 17.78 -2.54 180) (length 2.54) hide
+        (name "NC" (effects (font (size 1.27 1.27))))
+        (number "8" (effects (font (size 1.27 1.27))))
+      )
     )
   )
 )

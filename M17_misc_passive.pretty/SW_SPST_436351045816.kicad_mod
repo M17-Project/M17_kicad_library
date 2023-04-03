@@ -43,4 +43,9 @@
     (thermal_bridge_angle 45) (tstamp bae6ec7f-b642-463d-b717-dd169d886266))
   (pad "2" smd roundrect (at 2.8 0.85) (size 1.2 1) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
     (thermal_bridge_angle 45) (tstamp 7d2472fc-7992-452f-b596-f30f43dbfd71))
+  (model "./WE_WS-TASU_436351045816.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

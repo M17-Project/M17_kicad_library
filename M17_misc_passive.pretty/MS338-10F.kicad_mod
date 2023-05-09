@@ -22,4 +22,9 @@
       (gr_arc (start 1.85 15) (mid 0.541852 14.458148) (end 0 13.15) (width 1.5))
       (gr_arc (start 33.5 13.15) (mid 32.958148 14.458148) (end 31.65 15) (width 1.5))
     ) (tstamp 3f97afa8-1279-4e87-b398-e9ba2bf4713f))
+  (model "C:/Users/morga/Documents/git/OpenHT-hw/M17_kicad_library/M17_misc_passive.pretty/MS338-10F.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

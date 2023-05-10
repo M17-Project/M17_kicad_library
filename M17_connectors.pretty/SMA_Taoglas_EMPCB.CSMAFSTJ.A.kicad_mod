@@ -1,6 +1,5 @@
 (footprint "SMA_Taoglas_EMPCB.CSMAFSTJ.A" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
-  (attr smd)
   (fp_text reference "REF**" (at 6.2 0 90 unlocked) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.1)))
     (tstamp 25875b1f-ad6a-4f0f-a295-67f3a8cb6482)

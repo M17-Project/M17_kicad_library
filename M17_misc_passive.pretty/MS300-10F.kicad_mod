@@ -22,4 +22,9 @@
       (gr_arc (start 1.35 12.05) (mid 0.395406 11.654594) (end 0 10.7) (width 1.5))
       (gr_arc (start 29.7 10.7) (mid 29.304594 11.654594) (end 28.35 12.05) (width 1.5))
     ) (tstamp 3f97afa8-1279-4e87-b398-e9ba2bf4713f))
+  (model "./MS300-10F.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

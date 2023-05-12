@@ -35,4 +35,9 @@
     (thermal_bridge_angle 45) (tstamp 52cdf2ae-a2ba-4b5d-aa50-718fedfc0361))
   (pad "2" smd roundrect (at 1.7 0) (size 2 3.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)
     (thermal_bridge_angle 45) (tstamp 5e93c6b2-432d-4878-88bc-4118d78675bd))
+  (model "./L_Wurth_WE-LQSF-4828.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 -90))
+  )
 )

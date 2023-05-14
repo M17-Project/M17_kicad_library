@@ -1,0 +1,210 @@
+(kicad_symbol_lib (version 20220914) (generator kicad_symbol_editor)
+  (symbol "RFShield_Frame" (in_bom yes) (on_board yes)
+    (property "Reference" "J" (at 0 7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "" (at 0 0 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "ki_keywords" "RF Shield Frame" (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "ki_description" "RF Shield frame. You will need to pair it with a lid." (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "RFShield_Frame_0_1"
+      (polyline
+        (pts
+          (xy -12.7 7.62)
+          (xy -10.16 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -10.16 -7.62)
+          (xy -12.7 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -6.35 -7.62)
+          (xy -8.89 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -6.35 7.62)
+          (xy -8.89 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -2.54 -7.62)
+          (xy -5.08 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -2.54 7.62)
+          (xy -5.08 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -1.27 -7.62)
+          (xy 1.27 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 1.27 7.62)
+          (xy -1.27 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 2.54 -7.62)
+          (xy 5.08 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 5.08 7.62)
+          (xy 2.54 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 6.35 -7.62)
+          (xy 8.89 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 8.89 7.62)
+          (xy 6.35 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 10.16 -7.62)
+          (xy 12.7 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 12.7 7.62)
+          (xy 10.16 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -15.24 -7.62)
+          (xy -15.24 7.62)
+          (xy -13.97 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -13.97 -7.62)
+          (xy -15.24 -7.62)
+          (xy -15.24 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 13.97 -7.62)
+          (xy 15.24 -7.62)
+          (xy 15.24 -7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 15.24 -7.62)
+          (xy 15.24 7.62)
+          (xy 13.97 7.62)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "RFShield_Frame_1_1"
+      (pin passive line (at 0 -10.16 90) (length 2.54)
+        (name "Shield" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+  (symbol "RFShield_Lid" (in_bom yes) (on_board no)
+    (property "Reference" "J" (at 0 6.35 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "" (at 0 -7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 0 -7.62 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 0 -7.62 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "ki_keywords" "RF Shield Lid" (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "ki_description" "RF Shield lid. You will need to pair it with a frame." (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "RFShield_Lid_0_1"
+      (polyline
+        (pts
+          (xy -17.78 -2.54)
+          (xy -17.78 3.81)
+          (xy 17.78 3.81)
+          (xy 17.78 -2.54)
+        )
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+  )
+)

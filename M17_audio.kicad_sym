@@ -70,7 +70,7 @@
     (property "Reference" "IC" (at 0 1.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "LM4861" (at 7.62 1.27 0)
+    (property "Value" "LM4991xx" (at 7.62 1.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 0 -13.97 0)

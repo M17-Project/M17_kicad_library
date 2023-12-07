@@ -1,18 +1,18 @@
 (kicad_symbol_lib (version 20220914) (generator kicad_symbol_editor)
-  (symbol "M17_logo_20mmx15mm" (in_bom no) (on_board yes)
+  (symbol "M17_logo" (in_bom no) (on_board yes)
     (property "Reference" "LOGO" (at 0 4.826 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "M17_logo_20mmx15mm" (at 0 4.953 0)
+    (property "Value" "M17_logo" (at 0 4.953 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "M17_logos:M17_logo_20mmx15mm" (at -3.175 2.286 0)
+    (property "Footprint" "M17_logos:M17_logo_20x11.5mm" (at -3.175 2.286 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at -3.175 2.286 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (symbol "M17_logo_20mmx15mm_0_0"
+    (symbol "M17_logo_0_0"
       (polyline
         (pts
           (xy 2.148 0.4569)

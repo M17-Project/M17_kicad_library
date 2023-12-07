@@ -1,6 +1,6 @@
 (footprint "KH-RJ45-58-8P8C" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
-  (attr smd)
+  (attr through_hole)
   (fp_text reference "REF**" (at -0.45 -10.5 unlocked) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.1)))
     (tstamp 5fb1ee7f-3a3a-444b-8a8b-c3a54e67ab75)

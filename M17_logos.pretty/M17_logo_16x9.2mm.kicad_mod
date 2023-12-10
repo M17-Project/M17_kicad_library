@@ -1,6 +1,6 @@
 (footprint "M17_logo_16x9.2mm" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
-  (attr smd)
+  (attr smd exclude_from_pos_files exclude_from_bom)
   (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.1)))
     (tstamp 1c5ab169-ebf3-4672-95da-a3db36bbee16)

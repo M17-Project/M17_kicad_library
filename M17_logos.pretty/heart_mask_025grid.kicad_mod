@@ -1,7 +1,7 @@
 (footprint "heart_mask_025grid" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
   (descr "Copied from the pretty-kicad-libs (https://github.com/esden/pretty-kicad-libs)")
-  (attr smd)
+  (attr smd exclude_from_pos_files exclude_from_bom)
   (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.1)))
     (tstamp 5147f012-7d8e-4bd0-9be2-c072d45036dc)

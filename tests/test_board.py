@@ -44,3 +44,13 @@ def test_do_not_order(tmp_path):
     board.mark_do_not_order([archive])
     assert zipfile.ZipFile(archive).namelist().count(board.DO_NOT_ORDER) == 1
     assert (tmp_path / board.DO_NOT_ORDER).exists()
+
+
+def test_fp_lib_table_lists_kicad_libraries_used_by_parts():
+    from m17lib.cli import ROOT
+    from m17lib import tables
+
+    text = tables.fp_lib_table(ROOT)
+    assert '(name "Resistor_SMD")' in text and "${KICAD10_FOOTPRINT_DIR}/Resistor_SMD.pretty" in text
+    assert "${KIPRJMOD}/lib/footprints/M17_ICs.pretty" in text
+    assert '(name "M17_ICs")' in text and "${KICAD10_FOOTPRINT_DIR}/M17_ICs" not in text

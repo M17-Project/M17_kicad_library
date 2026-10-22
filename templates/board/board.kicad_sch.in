@@ -11,4 +11,18 @@
 		(company "M17 Project")
 	)
 	(lib_symbols)
+	(text "${WIP_MARK}"
+		(exclude_from_sim no)
+		(at 287.02 12.7 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+				(thickness 1.016)
+				(bold yes)
+				(color 200 0 0 1)
+			)
+			(justify right top)
+		)
+		(uuid "00000000-0000-0000-0000-00000000d0e1")
+	)
 )

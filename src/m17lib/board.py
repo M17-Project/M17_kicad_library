@@ -8,6 +8,7 @@ import re
 import sys
 import uuid
 import xml.etree.ElementTree as ET
+import zipfile
 from collections import OrderedDict
 from datetime import date
 from pathlib import Path
@@ -113,6 +114,7 @@ def new_board(target: Path, name: str, title: str, revision: str, stackup: str) 
         out.write_text(text, encoding="utf-8")
         written.append(out)
     written.extend(write_tables(target))
+    set_wip(target, True)
     return written
 
 
@@ -122,6 +124,49 @@ def write_tables(target: Path) -> list[Path]:
     sym.write_text(tables.sym_lib_table(LIB_ROOT), encoding="utf-8")
     fp.write_text(tables.fp_lib_table(LIB_ROOT), encoding="utf-8")
     return [sym, fp]
+
+
+# Work in progress marking
+
+WIP_TEXT = "WORK IN PROGRESS - DO NOT ORDER"
+WIP_VAR = "WIP_MARK"
+DO_NOT_ORDER = "DO-NOT-ORDER.txt"
+DO_NOT_ORDER_TEXT = (
+    "DO NOT ORDER\n\n"
+    "This design is a work in progress. It is not checked and not ready for\n"
+    "manufacture. The KiCad text variable WIP_MARK in the project marks it.\n"
+)
+
+
+def _project(target: Path) -> Path:
+    projects = sorted(target.glob("*.kicad_pro"))
+    if len(projects) != 1:
+        raise SystemExit(f"error: expected one .kicad_pro file in {target}, found {len(projects)}")
+    return projects[0]
+
+
+def is_wip(target: Path) -> bool:
+    """A board is work in progress when the project text variable WIP_MARK is not empty."""
+    data = json.loads(_project(target).read_text(encoding="utf-8"))
+    return bool((data.get("text_variables") or {}).get(WIP_VAR, "").strip())
+
+
+def set_wip(target: Path, on: bool) -> None:
+    pro = _project(target)
+    data = json.loads(pro.read_text(encoding="utf-8"))
+    data.setdefault("text_variables", {})[WIP_VAR] = WIP_TEXT if on else ""
+    pro.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+
+
+def mark_do_not_order(paths: list[Path]) -> None:
+    """Put DO-NOT-ORDER.txt into each directory and each ZIP file."""
+    for path in paths:
+        if path.is_dir():
+            (path / DO_NOT_ORDER).write_text(DO_NOT_ORDER_TEXT, encoding="utf-8")
+        elif path.suffix == ".zip":
+            with zipfile.ZipFile(path, "a") as archive:
+                if DO_NOT_ORDER not in archive.namelist():
+                    archive.writestr(DO_NOT_ORDER, DO_NOT_ORDER_TEXT)
 
 
 # Report checks
@@ -136,13 +181,19 @@ def check_erc(path: Path) -> list[str]:
     return problems
 
 
-def check_drc(path: Path) -> list[str]:
+def check_drc(path: Path, wip: bool = False) -> tuple[list[str], list[str]]:
+    """Return (problems, warnings). For a work in progress design, layout findings are warnings.
+    The schematic parity check is always strict."""
     data = json.loads(path.read_text(encoding="utf-8"))
-    problems = []
+    problems, warnings = [], []
     for group in ("violations", "unconnected_items", "schematic_parity"):
         for v in data.get(group, []):
-            problems.append(f"DRC {v.get('severity')}: {v.get('type')}: {v.get('description')} {_items(v)}")
-    return problems
+            text = f"DRC {v.get('severity')}: {v.get('type')}: {v.get('description')} {_items(v)}"
+            if wip and group != "schematic_parity":
+                warnings.append(text)
+            else:
+                problems.append(text)
+    return problems, warnings
 
 
 def _items(violation: dict) -> str:
@@ -247,6 +298,14 @@ def main(argv: list[str] | None = None) -> int:
     rep = sub.add_parser("check-reports", help="fail on any ERC or DRC violation")
     rep.add_argument("--erc", type=Path, required=True)
     rep.add_argument("--drc", type=Path, required=True)
+    rep.add_argument("--wip", action="store_true", help="work in progress: layout DRC findings are warnings")
+
+    wip = sub.add_parser("wip", help="mark the board as work in progress (on) or ready to order (off)")
+    wip.add_argument("state", choices=["on", "off", "status"])
+    wip.add_argument("--short", action="store_true", help="status: print only 'on' or nothing")
+
+    dno = sub.add_parser("do-not-order", help=f"put {DO_NOT_ORDER} into directories and ZIP files")
+    dno.add_argument("paths", nargs="+", type=Path)
 
     bom = sub.add_parser("bom", help="check the BOM and write Mouser and JLCPCB CSV files")
     bom.add_argument("xml", type=Path, help="KiCad python-bom XML export")
@@ -265,8 +324,25 @@ def main(argv: list[str] | None = None) -> int:
         for path in write_tables(cwd):
             print(f"wrote {path.relative_to(cwd)}")
         return 0
+    if args.command == "wip":
+        if args.state != "status":
+            set_wip(cwd, args.state == "on")
+        state = is_wip(cwd)
+        if args.short:
+            print("on" if state else "")
+        else:
+            print("work in progress" if state else "ready to order (WIP_MARK is empty)")
+        return 0
+    if args.command == "do-not-order":
+        mark_do_not_order(args.paths)
+        return 0
     if args.command == "check-reports":
-        problems = check_erc(args.erc) + check_drc(args.drc)
+        drc_problems, warnings = check_drc(args.drc, args.wip)
+        problems = check_erc(args.erc) + drc_problems
+        for warning in warnings:
+            print(f"warning (work in progress): {warning}", file=sys.stderr)
+        if warnings:
+            print(f"{len(warnings)} layout finding(s) allowed because the board is work in progress", file=sys.stderr)
     else:
         rows = read_bom(args.xml)
         write_mouser_bom(rows, args.mouser)

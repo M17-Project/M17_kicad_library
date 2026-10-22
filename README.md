@@ -101,6 +101,29 @@ same format as KiCad, so a save in KiCad does not change them.
 
 To clone a board repository with its library, use `git clone --recursive`.
 
+### Work in progress
+
+A new board starts as a work in progress. The KiCad text variable `WIP_MARK`
+in the project marks it. When `WIP_MARK` has a text:
+
+- `make check` shows the layout DRC findings (for example unrouted nets and
+  parts outside the board) as warnings. ERC, the schematic parity check and the
+  BOM check stay strict. Thus the CI is green while the layout is not finished.
+- The ZIP file with the Gerbers and the `fab` directory get the file
+  `DO-NOT-ORDER.txt`.
+- The schematic shows the text of `${WIP_MARK}` in the top right corner, in KiCad
+  and in the PDF: "WORK IN PROGRESS - DO NOT ORDER".
+
+When the design is complete and checked, make `WIP_MARK` empty. Use the command:
+
+```sh
+python3 lib/tools/m17board wip off
+```
+
+Or in KiCad: File, Schematic Setup, Text Variables. Then `make check` is strict
+again and the text disappears. To mark a board again, run
+`python3 lib/tools/m17board wip on`.
+
 ### Board build
 
 The board `Makefile` includes `lib/make/board.mk`. It has these targets:

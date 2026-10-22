@@ -1,0 +1,19 @@
+schema_version: 1
+library: M17_Mechanical
+description: Mechanical and connector parts source-of-truth for the M17 KiCad library
+parts:
+
+- part_id: CONN-UFL-HIROSE-R-SMT-1-60
+  type: connector
+  symbol: Connector:Conn_Coaxial
+  footprint: Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical
+  value: U.FL-R-SMT-1(60)
+  impedance: 50R
+  frequency_max: 6GHz
+  mating_cycles: 30
+  package: SMD_vertical
+  mouser: 798-UFLRSMT160
+  manufacturer: Hirose Electric
+  mpn: U.FL-R-SMT-1(60)
+  datasheet: https://www.hirose.com/en/product/series/U.FL/documents?path=%2Fapi%2Fv1%2Fseries%2FU.FL%2Fdocuments%2Fproduct_series_catalog%2Fcontent%3Flang%3DEN
+  description: 50Ω U.FL coaxial receptacle, SMD

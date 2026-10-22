@@ -1,0 +1,22 @@
+name: Check
+
+on:
+  push:
+    branches-ignore:
+      - part-check-images
+
+jobs:
+  check:
+    runs-on: ubuntu-26.04
+    container:
+      image: ghcr.io/slintak/kicad-builder:10.0.7
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10
+
+      - name: Run the tests
+        run: uv run pytest
+
+      - name: Check all parts and footprints
+        run: uv run m17lib check --no-render --out check

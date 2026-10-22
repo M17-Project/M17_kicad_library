@@ -1,0 +1,892 @@
+schema_version: 1
+library: M17_Passives
+description: Passive components source-of-truth for the M17 KiCad library
+parts:
+
+- part_id: RES-0R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 0R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C17168
+  mouser: 303-0402WGF0000TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF0000TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±800ppm/℃, -55℃~+155℃
+
+- part_id: RES-10R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 10R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25077
+  mouser: 303-0402WGF100JTCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF100JTCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-49R9-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 49R9
+  tolerance: ±1%
+  voltage: 50V
+  power: 0.0625W
+  technology: Thick Film
+  mouser: 603-RC0402FR-1049R9L
+  manufacturer: YAGEO
+  mpn: RC0402FR-1049R9L
+  datasheet: https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L
+  description: 0402 thick film resistor, 49.9Ω ±1%, 62.5mW, ±100ppm/K
+
+- part_id: RES-2K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 2k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C4109
+  mouser: 303-0402WGF2001TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF2001TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-1K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 1k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C11702
+  mouser: 303-0402WGF1001TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1001TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-120R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 120R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25079
+  mouser: 303-0402WGF1200TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1200TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-220R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 220R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25091
+  mouser: 303-0402WGF2200TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF2200TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-470R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 470R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25117
+  mouser: 303-0402WGF4700TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF4700TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-100K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 100k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25741
+  mouser: 303-0402WGF1003TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1003TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-180K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 180k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25760
+  mouser: 303-0402WGF1803TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1803TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-10K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 10k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25744
+  mouser: 303-0402WGF1002TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1002TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-20K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 20k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25765
+  mouser: 303-0402WGF2002TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF2002TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-4K7-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 4.7k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25900
+  mouser: 303-0402WGF4701TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF4701TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-33K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 33k
+  tolerance: ±1%
+  power: 0.063W
+  technology: Thick Film
+  lcsc: C25779
+  mouser: 603-RC0402FR-0733KL
+  manufacturer: Yageo
+  mpn: RC0402FR-0733KL
+  datasheet: https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L
+  description: 0402 33kΩ ±1% resistor
+
+- part_id: RES-5K1-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 5.1k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25905
+  mouser: 303-0402WGF5101TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF5101TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-1M-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 1M
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C26083
+  mouser: 303-0402WGF1004TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1004TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: CAP-100N-16V-0402-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 100nF
+  tolerance: ±10%
+  voltage: 16V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C1525
+  mouser: 187-CL05B104KO5NNNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05B104KO5NNNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 100nF, 16V, X7R, ±10%, ROHS
+
+- part_id: CAP-2U2-6V3-0402-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 2.2uF
+  tolerance: ±20%
+  voltage: 6.3V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C12530
+  mouser: 187-CL05A225MQ5NSNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05A225MQ5NSNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 2.2uF, 6.3V, X5R, ±20%, ROHS
+
+- part_id: CAP-4U7-10V-0402-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 4.7uF
+  tolerance: ±20%
+  voltage: 10V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C23733
+  mouser: 187-CL05A475MP5NRNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05A475MP5NRNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 4.7uF, 10V, X5R, ±20%, ROHS
+
+- part_id: CAP-1U-25V-0402-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 1uF
+  tolerance: ±10%
+  voltage: 25V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C52923
+  mouser: 187-CL05A105KA5NQNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05A105KA5NQNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 1uF, 25V, X5R, ±10%, ROHS
+
+- part_id: CAP-100N-50V-0402-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 100nF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C307331
+  mouser: 187-CL05B104KB54PNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05B104KB54PNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 100nF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-47N-50V-0402-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 47nF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C307339
+  mouser: 187-CL05B473KB5VPNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05B473KB5VPNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 47nF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-33N-50V-0402-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 33nF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C472437
+  mouser: 187-CL05B333KB5VPNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05B333KB5VPNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 33nF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-10N-50V-0402-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 10nF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C15195
+  mouser: 187-CL05B103KB5NNNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05B103KB5NNNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 10nF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-330P-50V-0402-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 330pF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C13533
+  mouser: 187-CL05C331JB5NNNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05C331JB5NNNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 330pF, 50V, C0G, ±5%, ROHS
+
+- part_id: CAP-2P2-50V-0402-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 2.2pF
+  tolerance: ±0.25pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C16193787
+  mouser: 187-CL05C2R2CB51PNC
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL05C2R2CB51PNC
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0402 MLCC capacitor, 2.2pF, 50V, C0G, ±0.25pF, ROHS
+
+- part_id: CAP-RF-1P2-50V-0402-C0G-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 1.2pF
+  tolerance: ±0.05pF
+  voltage: 50V
+  technology: High-Q MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H1R2WB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H1R2WB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H1R2WB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF MLCC, 1.2pF, 50V, C0G, ±0.05pF
+
+- part_id: CAP-RF-3P3-50V-0402-C0G-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 3.3pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: High-Q MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H3R3BB01
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H3R3BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H3R3BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF MLCC, 3.3pF, 50V, C0G, ±0.1pF
+
+- part_id: CAP-RF-51P-25V-0402-C0G-GRM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 51pF
+  tolerance: ±2%
+  voltage: 25V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GRM1555C1E510GA1D
+  manufacturer: Murata Electronics
+  mpn: GRM1555C1E510GA01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM1555C1E510GA01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 C0G MLCC, 51pF, 25V, ±2%
+
+- part_id: CAP-4U7-25V-0805-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 4.7uF
+  tolerance: ±10%
+  voltage: 25V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C1779
+  mouser: 187-CL21A475KAQNNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21A475KAQNNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 4.7uF, 25V, X5R, ±10%, ROHS
+
+- part_id: CAP-100N-100V-0805-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 100nF
+  tolerance: ±10%
+  voltage: 100V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C28233
+  mouser: 187-CL21B104KCFNNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21B104KCFNNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 100nF, 100V, X7R, ±10%, ROHS
+
+- part_id: CAP-1U-50V-0805-X7R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 1uF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C28323
+  mouser: 187-CL21B105KBFNNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21B105KBFNNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 1uF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-100N-50V-0805-X7R-YAGEO
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 100nF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X7R
+  lcsc: C49678
+  mouser: 603-CC805KRX7R9BB104
+  manufacturer: YAGEO
+  mpn: CC0805KRX7R9BB104
+  datasheet: https://www.yageogroup.com/component-documentation/download/specsheet/CC0805KRX7R9BB104
+  description: 0805 MLCC capacitor, 100nF, 50V, X7R, ±10%, ROHS
+
+- part_id: CAP-2U2-50V-0805-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 2.2uF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C377773
+  mouser: 187-CL21A225KBQNNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21A225KBQNNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 2.2uF, 50V, X5R, ±10%, ROHS
+
+- part_id: CAP-10U-25V-0805-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 10uF
+  tolerance: ±10%
+  voltage: 25V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C15850
+  mouser: 187-CL21A106KAYNNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21A106KAYNNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 10uF, 25V, X5R, ±10%, ROHS
+
+- part_id: CAP-10U-50V-0805-X5R
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 10uF
+  tolerance: ±10%
+  voltage: 50V
+  technology: MLCC
+  dielectric: X5R
+  lcsc: C2932476
+  mouser: 187-CL21A106KBYQNNE
+  manufacturer: Samsung Electro-Mechanics
+  mpn: CL21A106KBYQNNE
+  datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
+  description: 0805 MLCC capacitor, 10uF, 50V, X5R, ±10%, ROHS
+
+- part_id: CAP-RF-9P0-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 9.0pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H9R0BB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H9R0BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H9R0BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 9.0pF, 50V, ±0.1pF
+
+- part_id: CAP-RF-8P2-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 8.2pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H8R2BB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H8R2BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H8R2BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 8.2pF, 50V, ±0.1pF
+
+- part_id: CAP-RF-4P7-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 4.7pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H4R7BB01
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H4R7BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H4R7BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 4.7pF, 50V, ±0.1pF
+
+- part_id: CAP-RF-5P6-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 5.6pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H5R6BB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H5R6BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H5R6BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 5.6pF, 50V, ±0.1pF
+
+- part_id: CAP-RF-10P-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 10pF
+  tolerance: ±1%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H100FB01
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H100FB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H100FB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 10pF, 50V, ±1%
+
+- part_id: CAP-RF-27P-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 27pF
+  tolerance: ±1%
+  voltage: 50V
+  technology: High-Q MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H270FB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H270FB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H270FB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 27pF, 50V, ±1%
+
+- part_id: CAP-RF-33P-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 33pF
+  tolerance: ±1%
+  voltage: 50V
+  technology: High-Q MLCC
+  dielectric: C0G
+  mouser: 81-GJM1555C1H330FB1D
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H330FB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H330FB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 33pF, 50V, ±1%
+
+- part_id: CAP-RF-100P-100V-0402-GCM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 100pF
+  tolerance: ±2%
+  voltage: 100V
+  technology: MLCC
+  dielectric: C0G
+  mouser: 81-GCM1555C2A101GE2D
+  manufacturer: Murata Electronics
+  mpn: GCM1555C2A101GE02D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C2A101GE02-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 100pF 100V C0G 0402 capacitor for RF DC block and bypass
+
+- part_id: IND-RF-20N-0402-LQW15AN80
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 20nH
+  inductance: 20nH
+  tolerance: ±2%
+  dcr: 186mR max
+  q: 30 min at 100MHz
+  srf: 4.5GHz min
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN20NG80D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN20NG80D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0100_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 20nH, ±2%
+
+- part_id: IND-RF-16N-0402-LQW15AN80
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 16nH
+  inductance: 16nH
+  tolerance: ±2%
+  dcr: 126mR max
+  q: 31 min at 100MHz
+  srf: 5GHz min
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN16NG80D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN16NG80D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0100_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 16nH, ±2%
+
+- part_id: IND-RF-33N-0402-LQW15AN80
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 33nH
+  inductance: 33nH
+  tolerance: ±2%
+  dcr: 336mR max
+  q: 30 min at 100MHz
+  srf: 3.6GHz min
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN33NG80D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN33NG80D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0100_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 33nH, ±2%
+
+- part_id: IND-RF-36N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 36nH
+  inductance: 36nH
+  tolerance: ±2%
+  dcr: 630mR max
+  q: 25 min at 100MHz
+  srf: 3.1GHz min
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN36NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN36NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 36nH, ±2%
+
+- part_id: IND-RF-39N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 39nH
+  inductance: 39nH
+  tolerance: ±2%
+  dcr: 700mR max
+  q: 25 min at 250MHz
+  srf: 3GHz min
+  current: 250mA
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN39NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN39NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 39nH, ±2%
+
+- part_id: IND-RF-82N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 82nH
+  inductance: 82nH
+  tolerance: ±2%
+  dcr: 2.24R max
+  q: 20 min at 150MHz
+  srf: 2.3GHz min
+  current: 130mA
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN82NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN82NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 82nH, ±2%
+
+- part_id: IND-RF-110N-0603-LQW18AS
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0603_1608Metric
+  value: 110nH
+  inductance: 110nH
+  tolerance: ±2%
+  dcr: 610mR max
+  q: 32 min at 150MHz
+  srf: 1.35GHz min
+  technology: Air Core Wirewound
+  mouser: 81-LQW18ASR11G00D
+  manufacturer: Murata Electronics
+  mpn: LQW18ASR11G00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0111_PDF_INDUCTOR
+  package: 387
+  description: 0603 high-Q RF wirewound inductor, 110nH, ±2%
+
+- part_id: IND-RF-220N-0603-COILCRAFT-0603HP
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0603_1608Metric
+  value: 220nH
+  inductance: 220nH
+  tolerance: ±2%
+  dcr: 2R_max
+  q: 47_typ_at_250MHz
+  srf: 1.1GHz_typ
+  current: 280mA
+  technology: Ceramic Core Wirewound
+  mouser: 994-0603HP-R22XGRW
+  manufacturer: Coilcraft
+  mpn: 0603HP-R22XGRW
+  datasheet: https://www.coilcraft.com/getmedia/624a615f-2f4d-4200-95a6-61764a49bbc8/0603hp.pdf
+  package: 387
+  description: 220nH ±2% 0603 ceramic core RF inductor, 280mA
+
+- part_id: FB-600R-0402-BLM15PX
+  type: ferrite_bead
+  symbol: Device:FerriteBead
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 600R@100MHz
+  impedance: 600R@100MHz
+  tolerance: ±25%
+  dcr: 230mR_max
+  current: 900mA_at_85C
+  current_at_125c: 500mA
+  technology: Ferrite
+  lcsc: C160977
+  mouser: 81-BLM15PX601SN1D
+  manufacturer: Murata Electronics
+  mpn: BLM15PX601SN1D
+  datasheet: https://pim.murata.com/asset/pim4/ferriteBeadInductortypefilter/ENFA0018_PDF_FERRITEBEADINDUCTORTYPEFILTER
+  package: 258
+  description: Ferrite bead 600R at 100MHz, 0402, 900mA at 85°C, 500mA at 125°C, 230mR max DCR
+
+- part_id: IND-RF-2N4-0402-LQW15AN
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 2.4nH
+  inductance: 2.4nH
+  tolerance: ±0.1nH
+  technology: Air Core Wirewound
+  mouser: 81-LQW15AN2N4B00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN2N4B00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 2.4nH, ±0.1nH
+
+- part_id: IND-RF-2N7-0402-LQW15AN
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 2.7nH
+  inductance: 2.7nH
+  tolerance: ±2%
+  dcr: 47mR max
+  q: 28 min at 500MHz
+  srf: 14GHz min
+  technology: Air Core Wirewound
+  lcsc: C412269
+  mouser: 81-LQW15AN2N7G80D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN2N7G80D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0100_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 2.7nH, ±2%

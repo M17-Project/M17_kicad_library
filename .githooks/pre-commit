@@ -1,0 +1,8 @@
+#!/bin/sh
+# Make symbols/ again if the commit changes the part data or the base symbols.
+# Enable this hook once with: git config core.hooksPath .githooks
+
+if git diff --cached --name-only | grep -q -E '^(parts/|base-symbols/|src/m17lib/)'; then
+    uv run m17lib generate || exit 1
+    git add symbols/
+fi

@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "{{SCH_UUID}}")
+	(paper "A4")
+	(title_block
+		(title "{{TITLE}}")
+		(date "{{DATE}}")
+		(rev "{{REVISION}}")
+		(company "M17 Project")
+	)
+	(lib_symbols)
+)

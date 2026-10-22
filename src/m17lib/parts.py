@@ -15,7 +15,9 @@ LIB_REF = re.compile(r"^[A-Za-z0-9_.+-]+:[^:\s]+$")
 FIELD_KEY = re.compile(r"^[a-z][a-z0-9_]*$")
 LCSC = re.compile(r"^C[0-9]+$")
 
-REQUIRED = ("part_id", "type", "symbol", "value", "manufacturer", "mpn", "datasheet", "description")
+REQUIRED = ("part_id", "type", "symbol", "value", "description")
+# Parts on the BOM must also have these. Power symbols and board features (in_bom: false) do not.
+REQUIRED_BOM = ("manufacturer", "mpn", "datasheet")
 # Keys that map to KiCad built-in fields or control generation.
 BUILTIN = {"part_id", "symbol", "footprint", "value", "datasheet", "description", "in_bom"}
 # Order codes: only these two fields. LCSC is the field that JLCPCB and KiKit expect.
@@ -143,6 +145,9 @@ def _parse_part(raw: dict, library: str, source: str) -> tuple[Part, list[str]]:
     if footprint and not LIB_REF.match(footprint):
         errors.append("footprint must be 'Library:Name'")
     if in_bom:
+        for key in REQUIRED_BOM:
+            if not values.get(key):
+                errors.append(f"missing required field '{key}'")
         # Mouser is the primary source. Every part on the BOM must be orderable there.
         # Mouser is the primary source. If Mouser does not sell the part, 'source' must say where to buy it.
         if not values.get("mouser") and not values.get("source"):

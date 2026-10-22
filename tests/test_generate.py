@@ -121,3 +121,16 @@ def test_source_replaces_mouser(tmp_path):
     yaml = PART.replace("    mouser: 603-RC0402FR-0710KL\n", "    source: LCSC only\n")
     part = load_parts(make_root(tmp_path, yaml) / "parts")["M17_Passives"][0]
     assert part.fields["source"] == "LCSC only"
+
+
+def test_non_bom_part_needs_no_order_data(tmp_path):
+    yaml = """
+  - part_id: GND
+    type: power
+    symbol: Device:R
+    value: GND
+    in_bom: false
+    description: Power symbol
+"""
+    part = load_parts(make_root(tmp_path, yaml) / "parts")["M17_Passives"][0]
+    assert part.in_bom is False

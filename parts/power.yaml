@@ -1,0 +1,24 @@
+schema_version: 1
+library: M17_Power
+description: Power symbols for the M17 KiCad library. They are not on the BOM.
+parts:
+- part_id: GND
+  type: power
+  symbol: power:GND
+  value: GND
+  in_bom: false
+  description: Power symbol, ground
+
+- part_id: PWR-3V3
+  type: power
+  symbol: power:+3V3
+  value: +3V3
+  in_bom: false
+  description: Power symbol, +3.3 V
+
+- part_id: PWR_FLAG
+  type: power
+  symbol: power:PWR_FLAG
+  value: PWR_FLAG
+  in_bom: false
+  description: Marks a net as driven by a power source, for ERC

@@ -17,3 +17,12 @@ parts:
   mpn: U.FL-R-SMT-1(60)
   datasheet: https://www.hirose.com/en/product/series/U.FL/documents?path=%2Fapi%2Fv1%2Fseries%2FU.FL%2Fdocuments%2Fproduct_series_catalog%2Fcontent%3Flang%3DEN
   description: 50Ω U.FL coaxial receptacle, SMD
+
+- part_id: CONN-M2-KEYE-2230-CARD
+  type: connector
+  symbol: M17_Base_Connectors:M.2_Card_Key_E
+  footprint: Connector_PCBEdge:M.2_2230-xx-E
+  value: M.2 key E
+  in_bom: false
+  datasheet: https://pcisig.com/specifications
+  description: M.2 2230 key E card edge connector (gold fingers on the card). It is a board feature, not a part to buy

@@ -50,7 +50,7 @@ parts:
 
 - part_id: TCXO-TG2016SMN-32M
   type: tcxo
-  symbol: Device:Crystal_GND24
+  symbol: M17_Base_RF:TG2016SMN
   footprint: M17_ICs:ECS-TXO-20CSMV4_2.0x1.6mm
   value: 32MHz
   frequency: 32MHz

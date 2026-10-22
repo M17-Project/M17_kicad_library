@@ -26,3 +26,11 @@ parts:
   in_bom: false
   datasheet: https://pcisig.com/specifications
   description: M.2 2230 key E card edge connector (gold fingers on the card). It is a board feature, not a part to buy
+
+- part_id: TP-PAD-1MM
+  type: test_point
+  symbol: Connector:TestPoint
+  footprint: TestPoint:TestPoint_Pad_D1.0mm
+  value: TestPoint
+  in_bom: false
+  description: Test point, round copper pad 1.0 mm. It is a board feature, not a part to buy

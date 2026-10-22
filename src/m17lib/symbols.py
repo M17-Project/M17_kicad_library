@@ -124,9 +124,13 @@ def _with_value(prop: list, value: str) -> list:
     return new
 
 
-def renamed_base(base: BaseSymbol) -> list:
-    """Copy of a base symbol for a generated library, with a name that cannot collide with a part."""
+def renamed_base(base: BaseSymbol, in_bom: bool = True) -> list:
+    """Copy of a base symbol for a generated library, with a name that cannot collide with a part.
+    KiCad keeps the BOM flag in the root symbol, so parts that are not on the BOM need their own base."""
     node = copy.deepcopy(base.node)
+    flag = sexpr.find(node, "in_bom")
+    if flag is not None:
+        flag[1] = Sym("yes" if in_bom else "no")
     new_name = BASE_PREFIX + base.name
     node[1] = new_name
     for item in node[2:]:
@@ -172,6 +176,7 @@ def build_library(parts: list[Part], bases: dict[tuple[str, str], BaseSymbol]) -
     """Build one atomic library: used base symbols first, then one derived symbol per part."""
     problems: list[str] = []
     used: dict[str, BaseSymbol] = {}
+    bom_flags: dict[str, set[bool]] = {}
     for part in parts:
         key = part.base_symbol
         base = bases.get(key)
@@ -183,12 +188,16 @@ def build_library(parts: list[Part], bases: dict[tuple[str, str], BaseSymbol]) -
             problems.append(f"{part.part_id}: base name '{base.name}' exists in two base libraries")
             continue
         used[base.name] = base
+        bom_flags.setdefault(base.name, set()).add(part.in_bom)
+    for name, flags in bom_flags.items():
+        if len(flags) > 1:
+            problems.append(f"base symbol '{name}' is used by parts on the BOM and parts not on the BOM")
     if problems:
         raise ValueError("\n".join(problems))
 
     lib = new_library()
     for name in sorted(used):
-        lib.append(renamed_base(used[name]))
+        lib.append(renamed_base(used[name], in_bom=True in bom_flags[name]))
     for part in parts:
         lib.append(derived_symbol(part, bases[part.base_symbol]))
     return lib

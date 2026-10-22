@@ -77,9 +77,9 @@ def footprint_path(root: Path, ref: str) -> Path | None:
 def check_part(part: Part) -> list[Finding]:
     item = f"part {part.part_id}"
     findings = []
-    if not part.datasheet:
+    if part.in_bom and not part.datasheet:
         findings.append(_error(item, "No datasheet. Add the URL of the official datasheet from the manufacturer."))
-    elif not part.datasheet.startswith("https://"):
+    elif part.datasheet and not part.datasheet.startswith("https://"):
         findings.append(_warn(item, f"The datasheet URL does not use https: {part.datasheet}"))
     if part.in_bom and not part.fields.get("mouser"):
         findings.append(_warn(item, f"Not at Mouser. Source: {part.fields.get('source', '')}"))

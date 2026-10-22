@@ -13,6 +13,10 @@ FAB_HOUSE ?= jlcpcb
 RENDER_ARGS ?= --quality high --background transparent -w 1440 -h 1080
 DOCKER_IMAGE ?= ghcr.io/slintak/kicad-builder:10.0.7
 
+PRO := $(BOARD).kicad_pro
+# A board with a text in the KiCad text variable WIP_MARK is not ready to order (see the library README).
+WIP := $(shell $(M17BOARD) wip status --short)
+
 .PHONY: all check erc drc outputs schematic bom pos step gerbers render lib-update docker clean help
 .DEFAULT_GOAL := all
 
@@ -22,27 +26,28 @@ help:
 	@echo "make outputs     Schematic PDF, BOM, positions, STEP, Gerbers, renders"
 	@echo "make lib-update  Update the library submodule to the latest version"
 	@echo "make docker      Run 'make all' in the pinned KiCad Docker image"
+	@echo "Work in progress: $(if $(WIP),yes (layout DRC findings are warnings, outputs say DO NOT ORDER),no)"
 
 all: check outputs
 
 check: $(OUT)/reports/erc.json $(OUT)/reports/drc.json $(OUT)/bom/$(BOARD)_bom_mouser.csv
-	$(M17BOARD) check-reports --erc $(OUT)/reports/erc.json --drc $(OUT)/reports/drc.json
+	$(M17BOARD) check-reports --erc $(OUT)/reports/erc.json --drc $(OUT)/reports/drc.json $(if $(WIP),--wip)
 
 erc: $(OUT)/reports/erc.json
 drc: $(OUT)/reports/drc.json
 
-$(OUT)/reports/erc.json: $(SCH) sym-lib-table
+$(OUT)/reports/erc.json: $(SCH) sym-lib-table $(PRO)
 	@mkdir -p $(@D)
 	kicad-cli sch erc --format json --severity-all --units mm -o $@ $<
 
-$(OUT)/reports/drc.json: $(PCB) $(SCH) fp-lib-table
+$(OUT)/reports/drc.json: $(PCB) $(SCH) fp-lib-table $(PRO)
 	@mkdir -p $(@D)
 	kicad-cli pcb drc --format json --severity-all --schematic-parity --units mm -o $@ $<
 
 outputs: schematic bom pos step gerbers render
 
 schematic: $(OUT)/$(BOARD)_schematic.pdf
-$(OUT)/$(BOARD)_schematic.pdf: $(SCH)
+$(OUT)/$(BOARD)_schematic.pdf: $(SCH) $(PRO)
 	@mkdir -p $(@D)
 	kicad-cli sch export pdf -o $@ $<
 
@@ -68,10 +73,12 @@ $(OUT)/$(BOARD).step.xz: $(PCB)
 	xz -f $(OUT)/$(BOARD).step
 
 gerbers: $(OUT)/fab/$(BOARD)_gerbers.zip
-$(OUT)/fab/$(BOARD)_gerbers.zip: $(PCB)
+$(OUT)/fab/$(BOARD)_gerbers.zip: $(PCB) $(PRO)
 	@mkdir -p $(@D)
+	rm -f $(OUT)/fab/DO-NOT-ORDER.txt
 	kikit fab $(FAB_HOUSE) --no-drc $< $(OUT)/fab/kikit
 	cp $(OUT)/fab/kikit/gerbers.zip $@
+	$(if $(WIP),$(M17BOARD) do-not-order $(OUT)/fab $@)
 
 render: $(OUT)/render/$(BOARD)-top.png
 $(OUT)/render/$(BOARD)-top.png: $(PCB)

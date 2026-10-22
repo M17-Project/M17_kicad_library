@@ -1,0 +1,52 @@
+# Checks the parts and footprints that a pull request adds or changes,
+# and makes previews. The "Part check comment" workflow posts the result.
+name: Part check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-26.04
+    container:
+      image: ghcr.io/slintak/kicad-builder:10.0.7
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Trust the repository directory
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - uses: astral-sh/setup-uv@v10.3.2
+
+      - name: Check the changed parts and footprints
+        id: check
+        continue-on-error: true
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: uv run m17lib check --base "origin/$BASE_REF" --out check
+
+      - name: Save the pull request data for the comment workflow
+        if: always()
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          mkdir -p check
+          echo "$PR_NUMBER" > check/pr-number
+          echo "$HEAD_SHA" > check/head-sha
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: part-check
+          path: check/
+          retention-days: 14
+
+      - name: Fail if the check found errors
+        if: steps.check.outcome != 'success'
+        run: exit 1

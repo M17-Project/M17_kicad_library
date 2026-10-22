@@ -1,0 +1,12 @@
+# Sources of the 3D models that are embedded in the footprints in this directory.
+#
+# The MIT license of this repository does NOT apply to these 3D models.
+# Each model keeps the license or the terms of use of its owner.
+# Get models only from the manufacturer or from the KiCad 3D model library.
+# Do not use models from EasyEDA/LCSC, SnapEDA or other sites whose terms do not
+# allow redistribution in an open source library.
+#
+# Each embedded model must have one entry. The tests check this.
+# A maintainer checks the source and the terms of each model before a merge.
+
+models: []

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "m17lib"
+version = "0.1.0"
+description = "Tools that generate the M17 Project KiCad library from YAML part data."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0.1"]
+
+[project.scripts]
+m17lib = "m17lib.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/m17lib"]

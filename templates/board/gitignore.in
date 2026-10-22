@@ -1,0 +1,11 @@
+# Build outputs
+build/
+
+# KiCad
+*.bak
+*-backups/
+_autosave-*
+~*.lck
+\#auto_saved_files\#
+fp-info-cache
+*.kicad_prl

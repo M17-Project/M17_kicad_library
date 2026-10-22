@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""Board project tools. Run it from the root of a board repository: python3 lib/tools/m17board --help"""
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from m17lib.board import main  # noqa: E402
+
+sys.exit(main())

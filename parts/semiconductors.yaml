@@ -1,0 +1,24 @@
+schema_version: 1
+library: M17_Semiconductors
+description: Discrete semiconductors source-of-truth for the M17 KiCad library
+parts:
+
+- part_id: NMOS-2N7002KT1G-SOT23
+  type: nmos
+  symbol: Transistor_FET:Q_NMOS_GSD
+  footprint: Package_TO_SOT_SMD:SOT-23
+  value: 2N7002KT1G
+  vds: 60V
+  current: 380mA
+  rds_on: 2.5R@4.5V
+  vgs: +/-20V
+  vgs_threshold: 2.3Vmax
+  qg: 700pC@4.5V
+  power: 420mW
+  package: SOT-23-3
+  lcsc: C116584
+  mouser: 863-2N7002KT1G
+  manufacturer: onsemi
+  mpn: 2N7002KT1G
+  datasheet: https://www.onsemi.com/pdf/datasheet/2n7002k-d.pdf
+  description: Small-signal N-channel MOSFET, 60V, 380mA, SOT-23

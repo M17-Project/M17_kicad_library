@@ -1,0 +1,3 @@
+BOARD := {{NAME}}
+
+include lib/make/board.mk

@@ -1,0 +1,23 @@
+schema_version: 1
+library: M17_RF
+description: RF components source-of-truth for the M17 KiCad library
+parts:
+
+- part_id: SX1255IWLTRT
+  type: rf_transceiver
+  symbol: M17_Base_ICs:SX1255IWLTRT
+  footprint: Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.3x3.3mm_ThermalVias
+  value: SX1255
+  frequency_range: 400MHz-510MHz
+  supply_voltage: 2.7V-3.6V
+  rx_current: 18mA
+  tx_current: 60mA
+  output_power: 7dBm
+  interface: SPI/I2S
+  package: MLPQ-W-32
+  lcsc: C89372
+  mouser: 947-SX1255IWLTRT
+  manufacturer: Semtech
+  mpn: SX1255IWLTRT
+  datasheet: https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/44000000MDmE/Qs9oRoa8Sbb6mkImE9mtMh47H5LFx6KMbGcpb8L28SE
+  description: 400 MHz to 510 MHz full duplex RF front end transceiver with I/Q interface

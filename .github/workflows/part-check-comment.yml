@@ -1,0 +1,36 @@
+# Posts the result of the "Part check" workflow as a pull request comment.
+# This workflow runs from the default branch with write access.
+# It does not run code from the pull request. It only reads the report and PNG files.
+name: Part check comment
+
+on:
+  workflow_run:
+    workflows: ["Part check"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: part-check
+          path: ${{ runner.temp }}/part-check
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish the images and the comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: python3 .github/scripts/part_check_comment.py "${{ runner.temp }}/part-check"

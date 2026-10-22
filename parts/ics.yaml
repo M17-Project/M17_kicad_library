@@ -1,0 +1,82 @@
+schema_version: 1
+library: M17_ICs
+description: Integrated circuits source-of-truth for the M17 KiCad library
+parts:
+
+- part_id: LDO-TPS7A2033PDBVR
+  type: ldo
+  symbol: Regulator_Linear:TPS7A20xxxDBV
+  footprint: Package_TO_SOT_SMD:SOT-23-5
+  value: TPS7A2033
+  output_voltage: 3.3V
+  output_current: 300mA
+  input_voltage: 1.6V-6.0V
+  dropout: 145mV_max@300mA
+  noise: 7uVrms_typ
+  psrr: 95dB@1kHz
+  quiescent_current: 6.5uA_typ
+  input_capacitor: 0.47uF_effective_min_1uF_nominal
+  output_capacitor: 0.47uF_effective_min_200uF_max_1uF_nominal
+  enable: active_high_500k_smart_pulldown
+  active_discharge: 150R_typ
+  thermal_resistance: 187.1C_per_W_RthetaJA
+  package: SOT-23-5_DBV
+  lcsc: C2862740
+  mouser: 595-TPS7A2033PDBVR
+  manufacturer: Texas Instruments
+  mpn: TPS7A2033PDBVR
+  datasheet: https://www.ti.com/lit/ds/symlink/tps7a20.pdf
+  description: Low noise 3.3V 300mA LDO with active discharge, SOT-23-5
+
+- part_id: EEPROM-AT24C32D-STUM-T
+  type: eeprom
+  symbol: Memory_EEPROM:AT24CS32-STUM
+  footprint: Package_TO_SOT_SMD:SOT-23-5
+  value: AT24C32D
+  memory_size: 32Kbit
+  interface: I2C
+  supply_voltage: 1.7V-5.5V
+  clock_frequency: 1MHz
+  write_cycle_time: 5ms
+  write_endurance: 1000000_cycles
+  data_retention: 100_years
+  package: SOT-23-5
+  lcsc: C2061176
+  mouser: 556-AT24C32D-STUM-T
+  manufacturer: Microchip Technology
+  mpn: AT24C32D-STUM-T
+  datasheet: https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/AT24C32D-2-Kbit-I2C-Serial-EEPROM-Industrial-Grade-DS20006047.pdf
+  description: 32 Kbit I2C EEPROM for board ID (HAT format). SOT-23-5 package has address 0x50
+
+- part_id: TCXO-TG2016SMN-32M
+  type: tcxo
+  symbol: Device:Crystal_GND24
+  footprint: M17_ICs:ECS-TXO-20CSMV4_2.0x1.6mm
+  value: 32MHz
+  frequency: 32MHz
+  stability: 0.5ppm
+  output: clipped_sine
+  package: 2.0x1.6mm
+  lcsc: C19858587
+  mouser: 732-216SMN32MECGNNM3
+  manufacturer: Epson Timing
+  mpn: TG2016SMN 32.0000M-ECGNNM3
+  datasheet: https://download.epsondevice.com/td/pdf/brief/TG2016SMN_en.pdf
+  description: 32 MHz low noise clipped sine TCXO, 2.0x1.6 mm
+
+- part_id: TCXO-ECS-TXO-20CSMV4-32M
+  type: tcxo
+  symbol: M17_Base_RF:ECS-TXO-20CSMV4
+  footprint: Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm
+  value: 32MHz
+  frequency: 32MHz
+  stability: 0.5ppm
+  output: clipped_sine_0.8Vpp_typ
+  supply_voltage: 1.7V-3.6V
+  operating_temperature: -30C-85C
+  package: 2.0x1.6mm
+  mouser: 520-TX20CSMV4320AYTR
+  manufacturer: ECS Inc.
+  mpn: ECS-TXO-20CSMV4-320-AY-TR
+  datasheet: https://ecsxtal.com/store/pdf/ECS-TXO-20CSMV4.pdf
+  description: 32 MHz 0.5 ppm clipped sine TCXO, 2.0x1.6 mm

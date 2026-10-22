@@ -1,0 +1,47 @@
+# {{TITLE}}
+
+Revision {{REVISION}}.
+
+## Get the files
+
+Clone the repository with the library submodule:
+
+```sh
+git clone --recursive <repository URL>
+```
+
+If you cloned without `--recursive`, get the library:
+
+```sh
+git submodule update --init
+```
+
+## Build
+
+Install KiCad 10 and KiKit. Then run:
+
+```sh
+make
+```
+
+The build checks the design first. Any ERC or DRC violation stops the build.
+Each part on the BOM must have a Mouser number. The outputs are in `build/`.
+
+To use the same tools as the CI, run the build in Docker:
+
+```sh
+make docker
+```
+
+## Update the library
+
+```sh
+make lib-update
+```
+
+Then open the project in KiCad and update the symbols and footprints.
+Commit the `lib` submodule change together with the design change.
+
+## License
+
+TODO

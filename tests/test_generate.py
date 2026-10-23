@@ -138,7 +138,8 @@ def test_non_bom_part_needs_no_order_data(tmp_path):
 
 def test_non_bom_part_gets_base_without_bom_flag(tmp_path):
     root = make_root(tmp_path, PART.replace("RES-10K-0402", "LOGO").replace("    mouser: 603-RC0402FR-0710KL\n", "    in_bom: false\n"))
-    (root / "base-symbols" / "Device.kicad_sym").write_text(BASE_LIB.replace('(symbol "R"\n', '(symbol "R"\n\t\t(in_bom yes)\n'))
+    (root / "base-symbols" / "Device.kicad_sym").write_text(BASE_LIB.replace('(symbol "R"\n', '(symbol "R"\n\t\t(in_bom yes)\n\t\t(in_pos_files yes)\n'))
     (path, text), = generate(root).items()
     base = next(s for s in sexpr.find_all(sexpr.parse(text), "symbol") if s[1] == BASE_PREFIX + "R")
     assert sexpr.find(base, "in_bom")[1] == sexpr.Sym("no")
+    assert sexpr.find(base, "in_pos_files")[1] == sexpr.Sym("no")

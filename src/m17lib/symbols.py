@@ -126,11 +126,14 @@ def _with_value(prop: list, value: str) -> list:
 
 def renamed_base(base: BaseSymbol, in_bom: bool = True) -> list:
     """Copy of a base symbol for a generated library, with a name that cannot collide with a part.
-    KiCad keeps the BOM flag in the root symbol, so parts that are not on the BOM need their own base."""
+    KiCad keeps the BOM flag in the root symbol, so parts that are not on the BOM need their own base.
+    A part that is not on the BOM is a board feature (edge connector, test pad), so it is also not
+    in the position files for assembly."""
     node = copy.deepcopy(base.node)
-    flag = sexpr.find(node, "in_bom")
-    if flag is not None:
-        flag[1] = Sym("yes" if in_bom else "no")
+    for name in ("in_bom", "in_pos_files"):
+        flag = sexpr.find(node, name)
+        if flag is not None:
+            flag[1] = Sym("yes" if in_bom else "no")
     new_name = BASE_PREFIX + base.name
     node[1] = new_name
     for item in node[2:]:

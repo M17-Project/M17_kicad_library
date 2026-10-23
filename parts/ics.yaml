@@ -64,6 +64,25 @@ parts:
   datasheet: https://download.epsondevice.com/td/pdf/brief/TG2016SMN_en.pdf
   description: 32 MHz low noise clipped sine TCXO, 2.0x1.6 mm
 
+- part_id: VCXO-XLH53V032-32M
+  type: vcxo
+  symbol: M17_Base_RF:XL_VCXO_LVCMOS
+  footprint: Oscillator:Oscillator_SMD_IDT_JS6-6_5.0x3.2mm_P1.27mm
+  value: 32MHz
+  frequency: 32MHz
+  pull_range: 50ppm_APR
+  tuning_slope: 85ppm/V
+  output: LVCMOS
+  supply_voltage: 3.3V
+  operating_temperature: -40C-85C
+  package: 5.0x3.2mm
+  lcsc: C1671263
+  mouser: 972-XLH53V032000000I
+  manufacturer: Renesas Electronics
+  mpn: XLH53V032.000000I
+  datasheet: https://www.renesas.com/en/document/dst/xl-family-low-phase-noise-quartz-based-pll-oscillators-datasheet
+  description: 32 MHz VCXO, LVCMOS 3.3 V output, 50 ppm pull range, 5.0x3.2 mm. Reference for the ADF4002 PLL
+
 - part_id: TCXO-ECS-TXO-20CSMV4-32M
   type: tcxo
   symbol: M17_Base_RF:ECS-TXO-20CSMV4

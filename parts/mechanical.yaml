@@ -27,6 +27,15 @@ parts:
   datasheet: https://pcisig.com/specifications
   description: M.2 2230 key E card edge connector (gold fingers on the card). It is a board feature, not a part to buy
 
+- part_id: CONN-M2-KEYE-2242-CARD
+  type: connector
+  symbol: M17_Base_Connectors:M.2_Card_Key_E
+  footprint: M17_Connectors:M.2_2242-xx-E
+  value: M.2 key E
+  in_bom: false
+  datasheet: https://pcisig.com/specifications
+  description: M.2 2242 key E card edge connector (gold fingers on the card). It is a board feature, not a part to buy
+
 - part_id: TP-PAD-1MM
   type: test_point
   symbol: Connector:TestPoint

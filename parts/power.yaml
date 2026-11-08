@@ -22,3 +22,10 @@ parts:
   value: PWR_FLAG
   in_bom: false
   description: Marks a net as driven by a power source, for ERC
+
+- part_id: PWR-5V
+  type: power
+  symbol: power:+5V
+  value: +5V
+  in_bom: false
+  description: Power symbol, +5 V

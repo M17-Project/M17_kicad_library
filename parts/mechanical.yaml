@@ -43,3 +43,40 @@ parts:
   value: TestPoint
   in_bom: false
   description: Test point, round copper pad 1.0 mm. It is a board feature, not a part to buy
+
+- part_id: MH-M2.5-PAD-VIA
+  type: mounting_hole
+  symbol: Mechanical:MountingHole_Pad
+  footprint: MountingHole:MountingHole_2.7mm_M2.5_Pad_Via
+  value: MountingHole
+  in_bom: false
+  description: Mounting hole for an M2.5 screw, 2.7 mm hole, plated, copper pad with vias. Connect the pad to GND. It is a board feature, not a part to buy
+
+- part_id: CONN-SMA-ADAMTECH-RF2-04A-T-00-50-G
+  type: connector
+  symbol: Connector:Conn_Coaxial
+  footprint: M17_Connectors:SMA_AdamTech_RF2-04A-T-00-50-G_Vertical
+  value: SMA
+  impedance: 50R
+  frequency_max: 6GHz
+  package: THT_vertical
+  mouser: 737-RF204AT0050G
+  manufacturer: Adam Tech
+  mpn: RF2-04A-T-00-50-G
+  datasheet: https://app.adam-tech.com/products/download/data_sheet/219105/rf2-04a-t-00-50-g-data-sheet.pdf
+  description: 50Ω SMA jack, straight, through hole, 4 ground legs, 7.0 mm square body
+
+- part_id: CONN-SOCKET-2X20-HARWIN-M20-7832046
+  type: connector
+  symbol: Connector_Generic:Conn_02x20_Odd_Even
+  footprint: Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical
+  value: GPIO
+  pitch: 2.54mm
+  height: 8.5mm
+  plating: tin
+  lcsc: C3324057
+  mouser: 855-M20-7832046
+  manufacturer: Harwin
+  mpn: M20-7832046
+  datasheet: https://content.harwin.com/asset/d6e23765-84b2-4c9c-8c92-6f718b2b03f9/DRG-00386-Technical-Drawing-Datasheet-M20-783-pdf.pdf
+  description: 2x20 socket, 2.54 mm pitch, 8.5 mm high, through hole, vertical. Raspberry Pi GPIO header for a HAT (11 mm standoffs)

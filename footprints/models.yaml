@@ -9,4 +9,11 @@
 # Each embedded model must have one entry. The tests check this.
 # A maintainer checks the source and the terms of each model before a merge.
 
-models: []
+models:
+  - footprint: M17_Connectors:SMA_AdamTech_RF2-04A-T-00-50-G_Vertical
+    file: SMA_AdamTech_RF2-04A-T-00-50-G_Vertical.step
+    owner: M17 Project
+    license: MIT
+    source: https://app.adam-tech.com/products/download/data_sheet/219105/rf2-04a-t-00-50-g-data-sheet.pdf
+    design: models/SMA_AdamTech_RF2-04A-T-00-50-G_Vertical.sc
+    note: Drawn by the M17 Project in SolidCraft from the dimensions in the Adam Tech drawing. Not copied from another model

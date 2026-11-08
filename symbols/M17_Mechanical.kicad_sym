@@ -3194,7 +3194,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "CONN-SMA-AMPHENOL-132134"
+	(symbol "CONN-SMA-ADAMTECH-RF2-04A-T-00-50-G"
 		(extends "BASE_Conn_Coaxial")
 		(property "Reference" "J"
 			(at 0.254 3.048 0)
@@ -3216,7 +3216,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132134_Vertical"
+		(property "Footprint" "M17_Connectors:SMA_AdamTech_RF2-04A-T-00-50-G_Vertical"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3227,7 +3227,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.amphenolrf.com/library/download/link/link_id/593003/parent/132134/"
+		(property "Datasheet" "https://app.adam-tech.com/products/download/data_sheet/219105/rf2-04a-t-00-50-g-data-sheet.pdf"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3238,7 +3238,7 @@
 				)
 			)
 		)
-		(property "Description" "50Ω SMA jack, straight, through hole, 4 ground legs. Use on 1.6 mm or thinner boards"
+		(property "Description" "50Ω SMA jack, straight, through hole, 4 ground legs, 7.0 mm square body"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3249,7 +3249,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol RF"
+		(property "Manufacturer" "Adam Tech"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3260,7 @@
 				)
 			)
 		)
-		(property "MPN" "132134"
+		(property "MPN" "RF2-04A-T-00-50-G"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3271,18 +3271,7 @@
 				)
 			)
 		)
-		(property "Mouser" "523-132134"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C3174425"
+		(property "Mouser" "737-RF204AT0050G"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3304,7 +3293,7 @@
 				)
 			)
 		)
-		(property "Frequency_max" "18GHz"
+		(property "Frequency_max" "6GHz"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3337,7 +3326,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "SMA 132134"
+		(property "ki_keywords" "SMA RF2-04A-T-00-50-G"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

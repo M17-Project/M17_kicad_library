@@ -60,6 +60,7 @@ same format as KiCad, so a save in KiCad does not change them.
 | `symbols/` | Atomic symbol libraries | No, generated |
 | `footprints/` | Footprints with embedded 3D models | Yes, in KiCad |
 | `footprints/models.yaml` | Source of each embedded 3D model | Yes |
+| `models/` | SolidCraft sources of the 3D models that we draw | Yes, in SolidCraft |
 | `templates/board/` | Template for a new board project | Yes |
 | `make/board.mk` | Shared build rules for board projects | Yes |
 | `tools/m17board` | Board tool, Python 3 only | Yes |

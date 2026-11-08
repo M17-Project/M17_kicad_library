@@ -213,6 +213,21 @@ parts:
   datasheet: https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L
   description: 0402 33kΩ ±1% resistor
 
+- part_id: RES-3K9-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 3.9k
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C51721
+  mouser: 303-0402WGF3901TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF3901TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
 - part_id: RES-5K1-0402
   type: resistor
   symbol: Device:R

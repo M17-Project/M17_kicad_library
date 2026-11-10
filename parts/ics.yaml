@@ -3,6 +3,42 @@ library: M17_ICs
 description: Integrated circuits source-of-truth for the M17 KiCad library
 parts:
 
+- part_id: LDO-LP5907MFX-3.3
+  type: ldo
+  symbol: Regulator_Linear:LP5907MFX-3.3
+  footprint: Package_TO_SOT_SMD:SOT-23-5
+  value: LP5907MFX-3.3
+  output_voltage: 3.3V
+  output_current: 250mA
+  input_voltage: 2.2V-5.5V
+  dropout: 250mV_max@250mA
+  noise: 6.5uVrms_typ
+  psrr: 82dB@1kHz
+  quiescent_current: 12uA_typ
+  input_capacitor: 1uF
+  output_capacitor: 1uF_low_ESR_min
+  enable: active_high_1M_pulldown
+  active_discharge: 230R_typ
+  thermal_resistance: 193.4C_per_W_RthetaJA
+  package: SOT-23-5_DBV
+  lcsc: C80670
+  mouser: 595-LP5907MFX-3.3NPB
+  manufacturer: Texas Instruments
+  mpn: LP5907MFX-3.3/NOPB
+  datasheet: https://www.ti.com/lit/ds/symlink/lp5907.pdf
+  description: Ultra low noise 3.3V 250mA LDO with active discharge, SOT-23-5
+  # Drop-in alternates: same SOT-23-5 pinout (IN 1, GND 2, EN 3, NC 4, OUT 5),
+  # active discharge, 1 uF capacitors. Checked in the manufacturer datasheets.
+  alternates:
+    - manufacturer: onsemi
+      mpn: NCP163ASN330T1G
+      mouser: 863-NCP163ASN330T1G
+      lcsc: C603656
+    - manufacturer: Texas Instruments
+      mpn: TPS7A2033PDBVR
+      mouser: 595-TPS7A2033PDBVR
+      lcsc: C2862740
+
 - part_id: LDO-TPS7A2033PDBVR
   type: ldo
   symbol: Regulator_Linear:TPS7A20xxxDBV
@@ -27,6 +63,17 @@ parts:
   mpn: TPS7A2033PDBVR
   datasheet: https://www.ti.com/lit/ds/symlink/tps7a20.pdf
   description: Low noise 3.3V 300mA LDO with active discharge, SOT-23-5
+  # Drop-in alternates: same SOT-23-5 pinout and 1 uF capacitors. Their maximum
+  # input voltage is 5.5V (this part: 6.0V) and their output current is 250mA.
+  alternates:
+    - manufacturer: Texas Instruments
+      mpn: LP5907MFX-3.3/NOPB
+      mouser: 595-LP5907MFX-3.3NPB
+      lcsc: C80670
+    - manufacturer: onsemi
+      mpn: NCP163ASN330T1G
+      mouser: 863-NCP163ASN330T1G
+      lcsc: C603656
 
 - part_id: EEPROM-AT24C32D-STUM-T
   type: eeprom

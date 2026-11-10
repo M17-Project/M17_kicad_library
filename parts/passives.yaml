@@ -561,6 +561,12 @@ parts:
   mpn: CL21A106KAYNNNE
   datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
   description: 0805 MLCC capacitor, 10uF, 25V, X5R, ±10%, ROHS
+  # Drop-in alternates: 0805, 10uF, 25V, X5R, ±10%.
+  alternates:
+    - manufacturer: Taiyo Yuden
+      mpn: TMK212BBJ106KG-T
+      mouser: 963-TMK212BBJ106KG-T
+      lcsc: C386085
 
 - part_id: CAP-10U-50V-0805-X5R
   type: capacitor
@@ -796,6 +802,13 @@ parts:
   datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
   package: 258
   description: 0402 high-Q RF wirewound inductor, 39nH, ±2%
+  # Drop-in alternate: the same Murata part with ±3% tolerance. Q, DCR, SRF and
+  # current are the same (Murata JELF243A datasheet).
+  alternates:
+    - manufacturer: Murata Electronics
+      mpn: LQW15AN39NH00D
+      mouser: 81-LQW15AN39NH00D
+      lcsc: C913698
 
 - part_id: IND-RF-82N-0402-LQW15AN00
   type: inductor

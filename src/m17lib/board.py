@@ -14,6 +14,7 @@ from datetime import date
 from pathlib import Path
 
 from . import sexpr, tables
+from .alternates import ALT_SEPARATOR, split_alternates
 
 LIB_ROOT = Path(__file__).resolve().parents[2]
 TEMPLATE_DIR = LIB_ROOT / "templates" / "board"
@@ -241,32 +242,59 @@ def check_bom(rows: list[dict[str, str]]) -> list[str]:
     return []
 
 
+def _alternates(row: dict[str, str], key: str) -> tuple[str, str]:
+    """Order codes (key: 'mouser' or 'lcsc') of the alternates that have one, and their MPNs."""
+    alts = [a for a in split_alternates(row) if a[key]]
+    return ALT_SEPARATOR.join(a[key] for a in alts), ALT_SEPARATOR.join(a["mpn"] for a in alts)
+
+
 def write_mouser_bom(rows: list[dict[str, str]], csv_path: Path) -> None:
-    """CSV for the Mouser BOM tool: one line per Mouser part number."""
+    """CSV for the Mouser BOM tool: one line per Mouser part number.
+
+    The Alt columns list drop-in alternates at Mouser. The Mouser BOM tool ignores them.
+    """
     with csv_path.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.writer(stream)
-        writer.writerow(["Mouser Part Number", "Quantity", "Manufacturer", "MPN", "Description", "References"])
+        writer.writerow(["Mouser Part Number", "Quantity", "Manufacturer", "MPN", "Description", "References",
+                         "Alt Mouser Part Number", "Alt MPN"])
         for mouser, items in group([r for r in rows if r.get("Mouser")], "Mouser").items():
             first = items[0]
             refs = ",".join(r["Reference"] for r in items)
             writer.writerow([mouser, len(items), first.get("Manufacturer", ""), first.get("MPN", ""),
-                             first.get("Description", ""), refs])
+                             first.get("Description", ""), refs, *_alternates(first, "mouser")])
 
 
 def write_other_bom(rows: list[dict[str, str]], csv_path: Path) -> None:
     """CSV of the parts that Mouser does not sell, with the place to buy them."""
     with csv_path.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.writer(stream)
-        writer.writerow(["Source", "LCSC", "Quantity", "Manufacturer", "MPN", "Description", "References"])
+        writer.writerow(["Source", "LCSC", "Quantity", "Manufacturer", "MPN", "Description", "References",
+                         "Alt LCSC", "Alt MPN"])
         for mpn, items in group([r for r in rows if not r.get("Mouser")], "MPN").items():
             first = items[0]
             refs = ",".join(r["Reference"] for r in items)
             writer.writerow([first.get("Source", ""), first.get("LCSC", ""), len(items),
-                             first.get("Manufacturer", ""), mpn, first.get("Description", ""), refs])
+                             first.get("Manufacturer", ""), mpn, first.get("Description", ""), refs,
+                             *_alternates(first, "lcsc")])
+
+
+def write_alternates_bom(rows: list[dict[str, str]], csv_path: Path) -> None:
+    """CSV with one line per drop-in alternate: use it if the primary part is not in stock."""
+    with csv_path.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(["References", "Quantity", "Primary MPN", "Alt Manufacturer", "Alt MPN",
+                         "Alt Mouser Part Number", "Alt LCSC"])
+        for mpn, items in group(rows, "MPN").items():
+            refs = ",".join(r["Reference"] for r in items)
+            for alt in split_alternates(items[0]):
+                writer.writerow([refs, len(items), mpn, alt["manufacturer"], alt["mpn"], alt["mouser"], alt["lcsc"]])
 
 
 def write_jlcpcb_bom(rows: list[dict[str, str]], csv_path: Path) -> None:
-    """CSV for JLCPCB assembly. Parts without an LCSC number are listed with an empty code."""
+    """CSV for JLCPCB assembly. Parts without an LCSC number are listed with an empty code.
+
+    The file has only the columns of the JLCPCB template. Alternates are in the alternates CSV.
+    """
     with csv_path.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.writer(stream)
         writer.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
@@ -312,6 +340,7 @@ def main(argv: list[str] | None = None) -> int:
     bom.add_argument("--mouser", type=Path, required=True)
     bom.add_argument("--jlcpcb", type=Path, required=True)
     bom.add_argument("--other", type=Path, required=True, help="CSV of parts that Mouser does not sell")
+    bom.add_argument("--alternates", type=Path, help="CSV of the drop-in alternates")
 
     args = parser.parse_args(argv)
     cwd = Path.cwd()
@@ -348,6 +377,8 @@ def main(argv: list[str] | None = None) -> int:
         write_mouser_bom(rows, args.mouser)
         write_other_bom(rows, args.other)
         write_jlcpcb_bom(rows, args.jlcpcb)
+        if args.alternates:
+            write_alternates_bom(rows, args.alternates)
         problems = check_bom(rows)
 
     for problem in problems:

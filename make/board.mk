@@ -57,7 +57,7 @@ $(OUT)/bom/$(BOARD)_bom_mouser.csv: $(SCH)
 	@mkdir -p $(@D)
 	kicad-cli sch export python-bom -o $(OUT)/bom/$(BOARD)_bom.xml $<
 	$(M17BOARD) bom $(OUT)/bom/$(BOARD)_bom.xml --mouser $@ --jlcpcb $(OUT)/bom/$(BOARD)_bom_jlcpcb.csv \
-		--other $(OUT)/bom/$(BOARD)_bom_other.csv
+		--other $(OUT)/bom/$(BOARD)_bom_other.csv --alternates $(OUT)/bom/$(BOARD)_bom_alternates.csv
 
 pos: $(OUT)/fab/$(BOARD)_pos.csv
 $(OUT)/fab/$(BOARD)_pos.csv: $(PCB)

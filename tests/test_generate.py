@@ -142,3 +142,56 @@ def test_non_bom_part_gets_base_without_bom_flag(tmp_path):
     (path, text), = generate(root).items()
     base = next(s for s in sexpr.find_all(sexpr.parse(text), "symbol") if s[1] == BASE_PREFIX + "R")
     assert sexpr.find(base, "in_bom")[1] == sexpr.Sym("no")
+
+
+ALTERNATES = """    alternates:
+      - manufacturer: UNI-ROYAL
+        mpn: 0402WGF1002TCE
+        lcsc: C25741
+      - manufacturer: Vishay
+        mpn: CRCW040210K0FKED
+        mouser: 71-CRCW040210K0FKED
+"""
+
+
+def test_alternates_make_alt_fields(tmp_path):
+    yaml = PART + ALTERNATES
+    root = make_root(tmp_path, yaml)
+    part = load_parts(root / "parts")["M17_Passives"][0]
+    assert part.fields["alt_mpn"] == "0402WGF1002TCE, CRCW040210K0FKED"
+    assert part.fields["alt_mouser"] == "-, 71-CRCW040210K0FKED"
+    assert part.fields["alt_lcsc"] == "C25741, -"
+    (_, text), = generate(root).items()
+    symbol = {s[1]: s for s in sexpr.find_all(sexpr.parse(text), "symbol")}["RES-10K-0402"]
+    props = {p[1]: p[2] for p in sexpr.find_all(symbol, "property")}
+    assert props["Alt Manufacturer"] == "UNI-ROYAL, Vishay"
+    assert props["Alt Mouser"] == "-, 71-CRCW040210K0FKED"
+
+
+@pytest.mark.parametrize(
+    "old, new, message",
+    [
+        ("lcsc: C25741", "lcsc: C25741", None),
+        ("lcsc: C25741", "lcsc: 25741", "must match"),
+        ("        mpn: 0402WGF1002TCE\n", "", "missing required field 'mpn'"),
+        ("        lcsc: C25741\n", "", "needs 'mouser' or 'lcsc'"),
+        ("mpn: 0402WGF1002TCE", "mpn: RC0402FR-0710KL", "duplicate"),
+        ("manufacturer: Vishay", "manufacturer: Vishay, Dale", "must not contain ','"),
+        ("        mouser: 71-CRCW040210K0FKED\n", "        mouser: 71-CRCW040210K0FKED\n        price: 1\n",
+         "unknown key"),
+    ],
+)
+def test_alternates_validation(tmp_path, old, new, message):
+    yaml = PART + ALTERNATES.replace(old, new)
+    root = make_root(tmp_path, yaml)
+    if message is None:
+        load_parts(root / "parts")
+        return
+    with pytest.raises(ValidationError, match=message):
+        load_parts(root / "parts")
+
+
+def test_alt_fields_are_not_set_by_hand(tmp_path):
+    root = make_root(tmp_path, PART + "    alt_mpn: X123\n")
+    with pytest.raises(ValidationError, match="generated"):
+        load_parts(root / "parts")

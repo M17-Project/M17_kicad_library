@@ -137,11 +137,14 @@ The board `Makefile` includes `lib/make/board.mk`. It has these targets:
 | `make docker` | Run `make` in the same Docker image as the CI |
 
 The outputs are the schematic PDF, the BOMs, the position files, the Gerbers,
-the STEP model and the renders. There are three BOM files:
+the STEP model and the renders. There are four BOM files:
 
 - `*_bom_mouser.csv`: the parts from Mouser, for the Mouser BOM tool,
 - `*_bom_other.csv`: the parts that Mouser does not sell, with their source,
-- `*_bom_jlcpcb.csv`: all parts with LCSC numbers, for JLCPCB assembly.
+- `*_bom_jlcpcb.csv`: all parts with LCSC numbers, for JLCPCB assembly. It has
+  only the columns of the JLCPCB template,
+- `*_bom_alternates.csv`: one line for each drop-in alternate, with its Mouser
+  and LCSC numbers. The Mouser and other CSV files also have `Alt` columns.
 
 The BOM check fails if a part has no Mouser number and no source. ERC and DRC also fail if a
 symbol or footprint is different from the library. Then update the design from
@@ -245,6 +248,7 @@ This repository is public. Add only data that we may publish under its licenses.
 | `datasheet` | `Datasheet`, an `https://` URL | Yes |
 | `description` | `Description` | Yes |
 | `in_bom` | Set `false` for parts that are not on the BOM, for example a logo | No |
+| `alternates` | Drop-in alternates, see [Alternates](#alternates) | No |
 
 Other keys become KiCad fields with the same name. For example `tolerance` becomes
 `Tolerance`. Use only lower case letters, digits and `_` in keys.
@@ -252,8 +256,38 @@ Other keys become KiCad fields with the same name. For example `tolerance` becom
 The `part_id` is stable. Do not put distributor numbers in the `part_id`.
 Examples: `RES-10K-0402`, `CAP-100N-16V-0402-X7R`, `SX1255IWLTRT`.
 
-The only fields for order information are `Mouser`, `LCSC` and `Source`.
-Do not add other fields for order numbers.
+The only fields for order information are `Mouser`, `LCSC`, `Source` and the
+`Alt` fields of the alternates. Do not add other fields for order numbers.
+
+### Alternates
+
+An alternate is a different orderable component that can replace the part
+without a change to the board. Use an alternate if the part is not in stock.
+
+Add an alternate only if all of these conditions are true:
+
+- It has the same footprint and the same pin functions.
+- Its electrical data is equal or better for all boards that use the part.
+  Compare the datasheets.
+- It does not need different external components.
+
+If an alternate is better only for some boards, make a new part.
+
+```yaml
+  alternates:
+    - manufacturer: onsemi
+      mpn: NCP163ASN330T1G
+      mouser: 863-NCP163ASN330T1G
+      lcsc: C603656
+```
+
+Each alternate needs `manufacturer`, `mpn`, and `mouser` or `lcsc`. Write the
+reason (what you compared) in a YAML comment above the list.
+
+The generator makes the KiCad fields `Alt Manufacturer`, `Alt MPN`, `Alt Mouser`
+and `Alt LCSC`. Each field has one value for each alternate, in the order of the
+list, separated by `, `. If an alternate has no Mouser or LCSC number, the field
+has `-` at its position. Do not set the `alt_` keys in YAML.
 
 ## Generated files
 

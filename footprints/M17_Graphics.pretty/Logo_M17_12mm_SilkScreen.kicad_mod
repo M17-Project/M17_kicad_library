@@ -1,0 +1,112 @@
+(footprint "Logo_M17_12mm_SilkScreen"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "M17 Project logo")
+	(tags "logo")
+	(property "Reference" "REF**"
+		(at 0 -4.49 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d111a2c2-0509-55ee-8f43-6ba146474c4c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Logo_M17_12mm_SilkScreen"
+		(at 0 4.49 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "88abb11e-e859-5a6f-b64b-c378be300a6f")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "94a09e26-8d55-5cbf-a0cf-07198906bdb1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "M17 Project logo"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "74ca4d50-e3dd-5b00-aa6b-e0056e7435b3")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr board_only exclude_from_pos_files exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy 1.3097 -0.8028) (xy 1.3097 2.1238) (xy 2.0176 2.1238) (xy 2.0176 -3.4448) (xy 0.1343 -0.1828)
+			(xy 0.7474 0.1712)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "0d01389d-b321-56e6-b7ac-d667d34b6240")
+	)
+	(fp_poly
+		(pts
+			(xy 2.982 -1.7698) (xy 4.7738 -1.7698) (xy 2.628 1.9468) (xy 3.2411 2.3008) (xy 6 -2.4778) (xy 2.982 -2.4778)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "2e8c4cde-af1c-539d-bb18-f3258fe76d2e")
+	)
+	(fp_poly
+		(pts
+			(xy -0.4347 -3.4448) (xy -2.8871 0.8028) (xy -2.8871 -3.4448) (xy -6 1.9468) (xy -5.3869 2.3008)
+			(xy -3.5951 -0.8028) (xy -3.5951 3.4448) (xy -1.1427 -0.8028) (xy -1.1427 2.1238) (xy -0.4347 2.1238)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "a0442e35-7a05-5a8d-8c90-497a5c0f67e7")
+	)
+	(fp_rect
+		(start -6.25 -3.69)
+		(end 6.25 3.69)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ce17c2c0-c822-5fae-a94f-1fb5ea591946")
+	)
+	(embedded_fonts no)
+)

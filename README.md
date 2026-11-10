@@ -364,6 +364,14 @@ and the footprints in this repository, except as follows:
 - The symbols in `base-symbols/` that are copies from the KiCad library keep the
   KiCad library license: CC-BY-SA 4.0 with an exception for designs that use them.
   Refer to the [KiCad library license](https://www.kicad.org/libraries/license/).
+- The Creative Commons license buttons in `M17_Graphics` (`Logo_CC_*`) are trademarks
+  of Creative Commons. They are NOT under the MIT license. Use them only as the
+  [CC Trademark Policy](https://creativecommons.org/policies/#trademark) allows:
+  to show the license of the board, with the URI of the license deed. The footprints
+  have the URI under the button. Do not change the graphics. The policy allows only
+  a different color for the logo and its background (contrast ratio at least 3:1).
+- The M17 logo in `M17_Graphics` (`Logo_M17`) is the logo of the M17 Project. It is
+  NOT under the MIT license. Use it only on hardware of the M17 Project.
 - The 3D models that are embedded in the footprints are NOT under the MIT license.
   Each model keeps the license or terms of use of its owner. The source of each
   model is in `footprints/models.yaml`. We use only models from the manufacturer

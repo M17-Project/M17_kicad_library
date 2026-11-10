@@ -1,0 +1,29 @@
+schema_version: 1
+library: M17_Graphics
+description: Logos and license marks for the silkscreen and the schematic
+parts:
+# The CC button is the official 80x15 file from the Creative Commons press kit
+# (https://creativecommons.org/mission/downloads/). The CC Trademark Policy allows a
+# different color for the CC logo and its background (contrast ratio at least 3:1)
+# and asks for the URI of the deed. The footprint is white silkscreen: the white and
+# grey areas are silkscreen, the black areas are the board color. The deed URI is
+# under the button.
+- part_id: LOGO-CC-BY-NC-SA-4.0
+  type: logo
+  symbol: M17_Base_Graphics:Logo_CC_BY-NC-SA_4.0
+  footprint: M17_Graphics:Logo_CC_BY-NC-SA_4.0_17mm_SilkScreen
+  value: CC BY-NC-SA 4.0
+  in_bom: false
+  datasheet: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  size: 17x5.8mm
+  description: Creative Commons BY-NC-SA 4.0 license button and deed URI on the silkscreen. Use it on boards under this license
+
+- part_id: LOGO-M17
+  type: logo
+  symbol: M17_Base_Graphics:Logo_M17
+  footprint: M17_Graphics:Logo_M17_12mm_SilkScreen
+  value: M17
+  in_bom: false
+  datasheet: https://m17project.org/
+  size: 12x6.9mm
+  description: M17 Project logo on the silkscreen

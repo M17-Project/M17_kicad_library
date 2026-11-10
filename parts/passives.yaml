@@ -673,6 +673,7 @@ parts:
   voltage: 50V
   technology: High-Q MLCC
   dielectric: C0G
+  lcsc: C88883
   mouser: 81-GJM1555C1H270FB1D
   manufacturer: Murata Electronics
   mpn: GJM1555C1H270FB01D
@@ -689,6 +690,7 @@ parts:
   voltage: 50V
   technology: High-Q MLCC
   dielectric: C0G
+  lcsc: C464434
   mouser: 81-GJM1555C1H330FB1D
   manufacturer: Murata Electronics
   mpn: GJM1555C1H330FB01D
@@ -711,6 +713,23 @@ parts:
   datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C2A101GE02-01A-EN_PDF_CERAMICCAPACITORSMD
   package: 258
   description: 100pF 100V C0G 0402 capacitor for RF DC block and bypass
+
+- part_id: CAP-RF-100P-50V-0402-GRM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 100pF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C77177
+  mouser: 81-GRM1555C1H101JA1D
+  manufacturer: Murata Electronics
+  mpn: GRM1555C1H101JA01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM1555C1H101JA01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 100pF 50V C0G 0402 capacitor for RF DC block and bypass
 
 - part_id: IND-RF-20N-0402-LQW15AN80
   type: inductor
@@ -796,6 +815,7 @@ parts:
   srf: 3GHz min
   current: 250mA
   technology: Air Core Wirewound
+  lcsc: C98059
   mouser: 81-LQW15AN39NG00D
   manufacturer: Murata Electronics
   mpn: LQW15AN39NG00D
@@ -822,6 +842,7 @@ parts:
   srf: 2.3GHz min
   current: 130mA
   technology: Air Core Wirewound
+  lcsc: C167487
   mouser: 81-LQW15AN82NG00D
   manufacturer: Murata Electronics
   mpn: LQW15AN82NG00D

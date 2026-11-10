@@ -104,10 +104,11 @@ parts:
   stability: 0.5ppm
   output: clipped_sine
   package: 2.0x1.6mm
-  lcsc: C19858587
-  mouser: 732-216SMN32MECGNNM3
+  # Supply code M = 2.8 V / 3.3 V (code E is the 1.8 V version).
+  lcsc: C20340823
+  mouser: 732-216SMN32MMCGNNM3
   manufacturer: Epson Timing
-  mpn: TG2016SMN 32.0000M-ECGNNM3
+  mpn: TG2016SMN 32.0000M-MCGNNM3
   datasheet: https://download.epsondevice.com/td/pdf/brief/TG2016SMN_en.pdf
   description: 32 MHz low noise clipped sine TCXO, 2.0x1.6 mm
 
@@ -122,6 +123,8 @@ parts:
   supply_voltage: 1.7V-3.6V
   operating_temperature: -30C-85C
   package: 2.0x1.6mm
+  # Ordering code AY: A = ±0.5 ppm, Y = -30 to +85 °C (ECS datasheet).
+  lcsc: C19858587
   mouser: 520-TX20CSMV4320AYTR
   manufacturer: ECS Inc.
   mpn: ECS-TXO-20CSMV4-320-AY-TR

@@ -1812,6 +1812,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C19858587"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Type" "tcxo"
 			(at 0 0 0)
 			(show_name no)
@@ -1968,7 +1979,7 @@
 				)
 			)
 		)
-		(property "MPN" "TG2016SMN 32.0000M-ECGNNM3"
+		(property "MPN" "TG2016SMN 32.0000M-MCGNNM3"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1979,7 +1990,7 @@
 				)
 			)
 		)
-		(property "Mouser" "732-216SMN32MECGNNM3"
+		(property "Mouser" "732-216SMN32MMCGNNM3"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1990,7 +2001,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C19858587"
+		(property "LCSC" "C20340823"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2056,7 +2067,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "32MHz TG2016SMN 32.0000M-ECGNNM3"
+		(property "ki_keywords" "32MHz TG2016SMN 32.0000M-MCGNNM3"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

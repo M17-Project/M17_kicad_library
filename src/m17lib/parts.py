@@ -8,6 +8,8 @@ from pathlib import Path
 
 import yaml
 
+from .alternates import ALT_EMPTY, ALT_FIELD_NAMES, ALT_SEPARATOR, ALTERNATE_KEYS
+
 SCHEMA_VERSION = 1
 LIBRARY_NAME = re.compile(r"^M17_[A-Za-z0-9]+$")
 PART_ID = re.compile(r"^[A-Z0-9][A-Z0-9.+_-]*$")
@@ -20,8 +22,8 @@ REQUIRED = ("part_id", "type", "symbol", "value", "description")
 REQUIRED_BOM = ("manufacturer", "mpn", "datasheet")
 # Keys that map to KiCad built-in fields or control generation.
 BUILTIN = {"part_id", "symbol", "footprint", "value", "datasheet", "description", "in_bom"}
-# Order codes: only these two fields. LCSC is the field that JLCPCB and KiKit expect.
-FIELD_NAMES = {"mpn": "MPN", "lcsc": "LCSC", "mouser": "Mouser"}
+# Order codes: only these fields. LCSC is the field that JLCPCB and KiKit expect.
+FIELD_NAMES = {"mpn": "MPN", "lcsc": "LCSC", "mouser": "Mouser", **ALT_FIELD_NAMES}
 
 
 class ValidationError(ValueError):
@@ -120,10 +122,17 @@ def load_parts(parts_dir: Path) -> dict[str, list[Part]]:
 def _parse_part(raw: dict, library: str, source: str) -> tuple[Part, list[str]]:
     errors: list[str] = []
     values: dict[str, str] = {}
+    alt_fields: dict[str, str] = {}
     for key, value in raw.items():
         key = str(key)
         if not FIELD_KEY.match(key):
             errors.append(f"invalid key '{key}', use lower case and '_'")
+            continue
+        if key == "alternates":
+            alt_fields = _parse_alternates(value, _text(raw.get("mpn")), errors)
+            continue
+        if key.startswith("alt_"):
+            errors.append(f"'{key}' is generated, use the 'alternates' list")
             continue
         if isinstance(value, (list, dict)):
             errors.append(f"'{key}' must be a scalar value")
@@ -163,6 +172,7 @@ def _parse_part(raw: dict, library: str, source: str) -> tuple[Part, list[str]]:
         errors.append("datasheet must be an https:// URL of the official datasheet")
 
     extra = {k: v for k, v in values.items() if k not in BUILTIN and v}
+    extra.update(alt_fields)
     part = Part(
         part_id=part_id,
         library=library,
@@ -178,7 +188,45 @@ def _parse_part(raw: dict, library: str, source: str) -> tuple[Part, list[str]]:
     return part, errors
 
 
-_ORDER = ("manufacturer", "mpn", "mouser", "lcsc", "source", "type")
+def _parse_alternates(raw: object, mpn: str, errors: list[str]) -> dict[str, str]:
+    """Check the 'alternates' list. Return the Alt fields (values in list order, '-' if empty)."""
+    if not isinstance(raw, list) or not raw:
+        errors.append("'alternates' must be a non-empty list")
+        return {}
+    items: list[dict[str, str]] = []
+    seen = {mpn}
+    for index, alt in enumerate(raw):
+        where = f"alternates[{index}]"
+        if not isinstance(alt, dict):
+            errors.append(f"{where}: must be a mapping")
+            continue
+        unknown = sorted(set(map(str, alt)) - set(ALTERNATE_KEYS))
+        if unknown:
+            errors.append(f"{where}: unknown key(s) {', '.join(unknown)}, use {', '.join(ALTERNATE_KEYS)}")
+        item = {k: _text(alt.get(k)) for k in ALTERNATE_KEYS}
+        for key in ("manufacturer", "mpn"):
+            if not item[key]:
+                errors.append(f"{where}: missing required field '{key}'")
+        if not item["mouser"] and not item["lcsc"]:
+            errors.append(f"{where}: needs 'mouser' or 'lcsc'")
+        if item["lcsc"] and not LCSC.match(item["lcsc"]):
+            errors.append(f"{where}: lcsc '{item['lcsc']}' must match {LCSC.pattern}")
+        for key, value in item.items():
+            if "," in value or value == ALT_EMPTY:
+                errors.append(f"{where}: '{key}' must not contain ',' or be '{ALT_EMPTY}'")
+        if item["mpn"] in seen:
+            errors.append(f"{where}: mpn '{item['mpn']}' is the part itself or a duplicate")
+        seen.add(item["mpn"])
+        items.append(item)
+    fields: dict[str, str] = {}
+    for key in ALTERNATE_KEYS:
+        if any(i[key] for i in items):
+            fields[f"alt_{key}"] = ALT_SEPARATOR.join(i[key] or ALT_EMPTY for i in items)
+    return fields
+
+
+_ORDER = ("manufacturer", "mpn", "mouser", "lcsc", "source",
+          "alt_manufacturer", "alt_mpn", "alt_mouser", "alt_lcsc", "type")
 
 
 def _field_order(key: str) -> tuple[int, str]:

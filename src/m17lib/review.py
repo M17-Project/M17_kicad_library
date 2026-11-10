@@ -13,7 +13,8 @@ from pathlib import Path
 
 from . import checks, sexpr, testboard
 from .checks import Finding
-from .parts import Part, ValidationError, load_parts
+from .alternates import split_alternates
+from .parts import Part, ValidationError, field_name, load_parts
 from .symbols import BaseSymbol, load_base_symbols
 
 MARKER = "<!-- m17lib-check -->"
@@ -105,6 +106,11 @@ def review_part(root: Path, lib: Library, part: Part, out: Path, render: bool) -
                        f"Mouser: {part.fields.get('mouser', '-')}", f"LCSC: {part.fields.get('lcsc', '-')}",
                        f"Datasheet: {part.datasheet or '-'}", f"Symbol: `{part.symbol}`",
                        f"Footprint: `{part.footprint}`"]
+    alternates = split_alternates({field_name(k): v for k, v in part.fields.items()})
+    if alternates:
+        result.details.append("Alternates: " + "; ".join(
+            f"{a['manufacturer']} {a['mpn']} (Mouser: {a['mouser'] or '-'}, LCSC: {a['lcsc'] or '-'})"
+            for a in alternates))
     base = lib.bases.get(part.base_symbol)
     if base is None:
         result.findings.append(checks._error(f"part {part.part_id}", f"Base symbol `{part.symbol}` not found."))

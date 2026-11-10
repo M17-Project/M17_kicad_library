@@ -189,154 +189,6 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "BASE_ECS-TXO-20CSMV4"
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "Y"
-			(at 0 6.35 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ECS-TXO-20CSMV4"
-			(at 0 3.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "M17_ICs:ECS-TXO-20CSMV4_2.0x1.6mm"
-			(at 0 -7.62 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 -10.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Base symbol. Do not place it. Use a part from this library."
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "BASE_ECS-TXO-20CSMV4_0_1"
-			(rectangle
-				(start -6.35 5.08)
-				(end 6.35 -5.08)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-		)
-		(symbol "BASE_ECS-TXO-20CSMV4_1_1"
-			(pin power_in line
-				(at -1.27 -7.62 90)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 1.27 -7.62 90)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 8.89 0 180)
-				(length 2.54)
-				(name "OUT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 0 7.62 270)
-				(length 2.54)
-				(name "VDD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
 	(symbol "BASE_LP5907MFX-3.3"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1725,7 +1577,7 @@
 		(embedded_fonts no)
 	)
 	(symbol "TCXO-ECS-TXO-20CSMV4-32M"
-		(extends "BASE_ECS-TXO-20CSMV4")
+		(extends "BASE_TG2016SMN")
 		(property "Reference" "Y"
 			(at 0 6.35 0)
 			(show_name no)
@@ -1746,7 +1598,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm"
+		(property "Footprint" "M17_ICs:ECS-TXO-20CSMV4_2.0x1.6mm"
 			(at 0 -7.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1957,7 +1809,7 @@
 				)
 			)
 		)
-		(property "Description" "32 MHz low noise clipped sine TCXO, 2.0x1.6 mm"
+		(property "Description" "32 MHz 0.5 ppm low noise clipped sine TCXO, 2.8 V to 3.3 V, 2.0x1.6 mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2012,6 +1864,50 @@
 				)
 			)
 		)
+		(property "Alt Manufacturer" "ECS Inc."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Alt MPN" "ECS-TXO-20CSMV4-320-AY-TR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Alt Mouser" "520-TX20CSMV4320AYTR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Alt LCSC" "C19858587"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Type" "tcxo"
 			(at 0 0 0)
 			(show_name no)
@@ -2034,7 +1930,18 @@
 				)
 			)
 		)
-		(property "Output" "clipped_sine"
+		(property "Operating_temperature" "-40C-85C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Output" "clipped_sine_0.8Vpp_min"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2057,6 +1964,17 @@
 			)
 		)
 		(property "Stability" "0.5ppm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supply_voltage" "2.8V-3.3V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

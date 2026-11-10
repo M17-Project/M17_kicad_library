@@ -102,20 +102,33 @@ parts:
   value: 32MHz
   frequency: 32MHz
   stability: 0.5ppm
-  output: clipped_sine
+  output: clipped_sine_0.8Vpp_min
+  supply_voltage: 2.8V-3.3V
+  operating_temperature: -40C-85C
   package: 2.0x1.6mm
-  # Supply code M = 2.8 V / 3.3 V (code E is the 1.8 V version).
+  # Ordering code MCGNNM (Epson TG2016SMN datasheet): M = 2.8 V to 3.3 V supply
+  # (E is the 1.8 V version), C = ±0.5 ppm, G = -40 to +85 °C, N = no ST, N = no Vc.
+  # Pin 1 is N.C.: open or GND. Aging ±0.5 ppm in the first year.
   lcsc: C20340823
   mouser: 732-216SMN32MMCGNNM3
   manufacturer: Epson Timing
   mpn: TG2016SMN 32.0000M-MCGNNM3
   datasheet: https://download.epsondevice.com/td/pdf/brief/TG2016SMN_en.pdf
-  description: 32 MHz low noise clipped sine TCXO, 2.0x1.6 mm
+  description: 32 MHz 0.5 ppm low noise clipped sine TCXO, 2.8 V to 3.3 V, 2.0x1.6 mm
+  # Alternate: same pin functions (1 GND or N.C., 2 GND, 3 OUT, 4 VDD), clipped
+  # sine 0.8 Vpp, ±0.5 ppm. The footprint is the ECS land pattern; it covers the
+  # Epson terminals (Epson recommends 0.6 x 0.75 mm pads at 1.65 x 1.13 mm).
+  # ECS is specified only from -30 °C and has ±1.0 ppm aging in the first year.
+  alternates:
+    - manufacturer: ECS Inc.
+      mpn: ECS-TXO-20CSMV4-320-AY-TR
+      mouser: 520-TX20CSMV4320AYTR
+      lcsc: C19858587
 
 - part_id: TCXO-ECS-TXO-20CSMV4-32M
   type: tcxo
-  symbol: M17_Base_RF:ECS-TXO-20CSMV4
-  footprint: Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm
+  symbol: M17_Base_RF:TG2016SMN
+  footprint: M17_ICs:ECS-TXO-20CSMV4_2.0x1.6mm
   value: 32MHz
   frequency: 32MHz
   stability: 0.5ppm

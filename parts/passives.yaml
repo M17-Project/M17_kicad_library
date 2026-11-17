@@ -33,6 +33,27 @@ parts:
   datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
   description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
 
+- part_id: RES-33R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 33R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25105
+  mouser: 303-0402WGF330JTCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF330JTCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+  # Drop-in alternate: 0402, 33 ohm, 1%, 1/16 W thick film (YAGEO RC series).
+  alternates:
+    - manufacturer: YAGEO
+      mpn: RC0402FR-0733RL
+      mouser: 603-RC0402FR-0733RL
+      lcsc: C138002
+
 - part_id: RES-49R9-0402
   type: resistor
   symbol: Device:R
@@ -386,6 +407,22 @@ parts:
   datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
   description: 0402 MLCC capacitor, 10nF, 50V, X7R, ±10%, ROHS
 
+- part_id: CAP-1N-50V-0402-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 1nF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C76947
+  mouser: 81-GRM1555C1H102JA1D
+  manufacturer: Murata Electronics
+  mpn: GRM1555C1H102JA01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM1555C1H102JA01-01A-EN_PDF_CERAMICCAPACITORSMD
+  description: 0402 MLCC capacitor, 1nF, 50V, C0G, ±5%, ROHS
+
 - part_id: CAP-330P-50V-0402-C0G
   type: capacitor
   symbol: Device:C
@@ -731,6 +768,29 @@ parts:
   package: 258
   description: 100pF 50V C0G 0402 capacitor for RF DC block and bypass
 
+- part_id: CAP-RF-150P-50V-0402-GCM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 150pF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C126497
+  mouser: 81-GCM1555C1H151J16D
+  manufacturer: Murata Electronics
+  mpn: GCM1555C1H151JA16D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C1H151JA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 150pF 50V C0G 0402 capacitor for RF DC block and bypass
+  # Drop-in alternate: 0402, 150 pF, 5%, 50 V, C0G.
+  alternates:
+    - manufacturer: Samsung Electro-Mechanics
+      mpn: CL05C151JB5NNNC
+      mouser: 187-CL05C151JB5NNNC
+      lcsc: C86286
+
 - part_id: IND-RF-20N-0402-LQW15AN80
   type: inductor
   symbol: Device:L
@@ -784,6 +844,26 @@ parts:
   datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0100_PDF_INDUCTOR
   package: 258
   description: 0402 high-Q RF wirewound inductor, 33nH, ±2%
+
+- part_id: IND-RF-27N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 27nH
+  inductance: 27nH
+  tolerance: ±2%
+  dcr: 520mR max
+  q: 25 min at 250MHz
+  srf: 3.5GHz min
+  current: 280mA
+  technology: Air Core Wirewound
+  lcsc: C98057
+  mouser: 81-LQW15AN27NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN27NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 27nH, ±2%
 
 - part_id: IND-RF-36N-0402-LQW15AN00
   type: inductor

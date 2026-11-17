@@ -162,3 +162,29 @@ parts:
   mpn: ECS-TXO-20CSMV4-320-AY-TR
   datasheet: https://ecsxtal.com/store/pdf/ECS-TXO-20CSMV4.pdf
   description: 32 MHz 0.5 ppm clipped sine TCXO, 2.0x1.6 mm
+
+- part_id: ADF4002BCPZ
+  type: pll
+  symbol: Timer_PLL:ADF4002BCPZ
+  footprint: Package_CSP:LFCSP-20-1EP_4x4mm_P0.5mm_EP2.1x2.1mm
+  value: ADF4002
+  rf_input_frequency: 5MHz-400MHz
+  reference_input_frequency: 20MHz-300MHz
+  phase_detector_frequency: 104MHz max
+  supply_voltage: 2.7V-3.3V
+  charge_pump_voltage: VDD-5.5V
+  supply_current: 6mA max
+  interface: 3-wire serial
+  package: LFCSP-20 4x4mm
+  lcsc: C578975
+  mouser: 584-ADF4002BCPZ-R7
+  manufacturer: Analog Devices
+  mpn: ADF4002BCPZ-RL7
+  datasheet: https://www.analog.com/media/en/technical-documentation/data-sheets/ADF4002.pdf
+  description: Phase detector and frequency synthesizer, 400 MHz RF input, 104 MHz PFD, 3-wire serial interface, LFCSP-20
+  # Drop-in alternate: the same part in a tray (ADF4002BCPZ). RL7 is a 7 inch reel.
+  alternates:
+    - manufacturer: Analog Devices
+      mpn: ADF4002BCPZ
+      mouser: 584-ADF4002BCPZ
+      lcsc: C207536

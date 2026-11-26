@@ -249,6 +249,36 @@ parts:
   datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
   description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
 
+- part_id: RES-18K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 18K
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25762
+  mouser: 303-0402WGF1802TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1802TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-22K-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 22K
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25768
+  mouser: 303-0402WGF2202TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF2202TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
 - part_id: RES-33K-0402
   type: resistor
   symbol: Device:R
@@ -452,6 +482,54 @@ parts:
   mpn: GRM1555C1H102JA01D
   datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM1555C1H102JA01-01A-EN_PDF_CERAMICCAPACITORSMD
   description: 0402 MLCC capacitor, 1nF, 50V, C0G, ±5%, ROHS
+
+- part_id: CAP-2N2-50V-0402-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 2.2nF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C385029
+  mouser: 81-GRM1555C1H222J01D
+  manufacturer: Murata Electronics
+  mpn: GRM1555C1H222JA01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM1555C1H222JA01-01A-EN_PDF_CERAMICCAPACITORSMD
+  description: 0402 MLCC capacitor, 2.2nF, 50V, C0G, ±5%, ROHS
+
+- part_id: CAP-22N-50V-0805-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0805_2012Metric
+  value: 22nF
+  tolerance: ±5%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C2254544
+  mouser: 81-GCM21B5C1H223JA6K
+  manufacturer: Murata Electronics
+  mpn: GCM21B5C1H223JA16K
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM21B5C1H223JA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  description: 0805 MLCC capacitor, 22nF, 50V, C0G, ±5%, ROHS
+
+- part_id: CAP-470N-25V-1206-C0G
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_1206_3216Metric
+  value: 470nF
+  tolerance: ±5%
+  voltage: 25V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C6049896
+  mouser: 81-GRM31C5C1E474JE1L
+  manufacturer: Murata Electronics
+  mpn: GRM31C5C1E474JE01L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31C5C1E474JE01-01A-EN_PDF_CERAMICCAPACITORSMD
+  description: 1206 MLCC capacitor, 470nF, 25V, C0G, ±5%, ROHS
 
 - part_id: CAP-330P-50V-0402-C0G
   type: capacitor

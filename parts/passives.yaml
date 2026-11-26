@@ -18,6 +18,21 @@ parts:
   datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
   description: 0402 thick film resistor, 62.5mW, ±800ppm/℃, -55℃~+155℃
 
+- part_id: RES-4R7-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 4R7
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25121
+  mouser: 303-0402WGF470KTCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF470KTCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±200ppm/℃, -55℃~+155℃
+
 - part_id: RES-10R-0402
   type: resistor
   symbol: Device:R
@@ -111,6 +126,21 @@ parts:
   mouser: 303-0402WGF1200TCE
   manufacturer: UNI-ROYAL(Uniroyal Elec)
   mpn: 0402WGF1200TCE
+  datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
+  description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
+
+- part_id: RES-150R-0402
+  type: resistor
+  symbol: Device:R
+  footprint: Resistor_SMD:R_0402_1005Metric
+  value: 150R
+  tolerance: ±1%
+  voltage: 50V
+  technology: Thick Film
+  lcsc: C25082
+  mouser: 303-0402WGF1500TCE
+  manufacturer: UNI-ROYAL(Uniroyal Elec)
+  mpn: 0402WGF1500TCE
   datasheet: https://www.uni-royal.cn/en/images/userfile/file/1787191973c56505e6d9ab55c7.pdf
   description: 0402 thick film resistor, 62.5mW, ±100ppm/℃, -55℃~+155℃
 
@@ -455,6 +485,23 @@ parts:
   datasheet: https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf
   description: 0402 MLCC capacitor, 2.2pF, 50V, C0G, ±0.25pF, ROHS
 
+- part_id: CAP-RF-1P0-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 1pF
+  tolerance: ±0.1pF
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C76898
+  mouser: 81-GJM1555C1H1R0BB01
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H1R0BB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H1R0BB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 1pF, 50V, ±0.1pF
+
 - part_id: CAP-RF-1P2-50V-0402-C0G-GJM
   type: capacitor
   symbol: Device:C
@@ -701,6 +748,23 @@ parts:
   package: 258
   description: 0402 high-Q RF C0G capacitor, 10pF, 50V, ±1%
 
+- part_id: CAP-RF-15P-50V-0402-GJM
+  type: capacitor
+  symbol: Device:C
+  footprint: Capacitor_SMD:C_0402_1005Metric
+  value: 15pF
+  tolerance: ±2%
+  voltage: 50V
+  technology: MLCC
+  dielectric: C0G
+  lcsc: C440152
+  mouser: 81-GJM1555C1H150GB01
+  manufacturer: Murata Electronics
+  mpn: GJM1555C1H150GB01D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM1555C1H150GB01-01A-EN_PDF_CERAMICCAPACITORSMD
+  package: 258
+  description: 0402 high-Q RF C0G capacitor, 15pF, 50V, ±2%
+
 - part_id: CAP-RF-27P-50V-0402-GJM
   type: capacitor
   symbol: Device:C
@@ -790,6 +854,26 @@ parts:
       mpn: CL05C151JB5NNNC
       mouser: 187-CL05C151JB5NNNC
       lcsc: C86286
+
+- part_id: IND-RF-18N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 18nH
+  inductance: 18nH
+  tolerance: ±2%
+  dcr: 270mR max
+  q: 25 min at 250MHz
+  srf: 4.5GHz min
+  current: 370mA
+  technology: Air Core Wirewound
+  lcsc: C91622
+  mouser: 81-LQW15AN18NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN18NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 18nH, ±2%
 
 - part_id: IND-RF-20N-0402-LQW15AN80
   type: inductor
@@ -909,6 +993,26 @@ parts:
       mpn: LQW15AN39NH00D
       mouser: 81-LQW15AN39NH00D
       lcsc: C913698
+
+- part_id: IND-RF-68N-0402-LQW15AN00
+  type: inductor
+  symbol: Device:L
+  footprint: Inductor_SMD:L_0402_1005Metric
+  value: 68nH
+  inductance: 68nH
+  tolerance: ±2%
+  dcr: 1.96R max
+  q: 20 min at 200MHz
+  srf: 2.5GHz min
+  current: 140mA
+  technology: Air Core Wirewound
+  lcsc: C108965
+  mouser: 81-LQW15AN68NG00D
+  manufacturer: Murata Electronics
+  mpn: LQW15AN68NG00D
+  datasheet: https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR
+  package: 258
+  description: 0402 high-Q RF wirewound inductor, 68nH, ±2%
 
 - part_id: IND-RF-82N-0402-LQW15AN00
   type: inductor
